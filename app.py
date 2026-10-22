@@ -25,6 +25,7 @@ from calidad.analizador import (
     paleta_dominante,
     preparar_imagen,
 )
+from calidad.leads import email_valido, guardar_lead
 from calidad.productos import COLOR_CATEGORIA, PRODUCTOS, TEXTO_CATEGORIA
 
 RAIZ = Path(__file__).parent
@@ -423,6 +424,49 @@ st.markdown(
 """,
     unsafe_allow_html=True,
 )
+st.markdown(
+    '<div class="tarjeta"><div class="h3">¿Te lo enseñamos con tus productos?</div>'
+    "Déjanos tu correo y te contactamos después del evento.</div>",
+    unsafe_allow_html=True,
+)
+if st.session_state.get("lead_enviado"):
+    st.success("¡Gracias! Te escribiremos en los próximos días.")
+else:
+    with st.form("form_leads", clear_on_submit=False, border=False):
+        lead_email = st.text_input("Correo electrónico *", placeholder="nombre@empresa.com")
+        cn, ce = st.columns(2)
+        with cn:
+            lead_nombre = st.text_input("Nombre (opcional)")
+        with ce:
+            lead_empresa = st.text_input("Empresa (opcional)")
+        lead_ok = st.checkbox(
+            "Acepto que Tairel Data me contacte por correo o teléfono para informarme sobre sus servicios."
+        )
+        st.markdown(
+            f'<div class="nota">Responsable: Tairel Data, S.L. Usaremos tus datos solo para este contacto y '
+            f"no los cederemos a terceros. Puedes pedir su acceso o borrado en {esc(EMAIL_CONTACTO)}.</div>",
+            unsafe_allow_html=True,
+        )
+        enviar = st.form_submit_button("Quiero que me contactéis", type="primary", use_container_width=True)
+    if enviar:
+        if not email_valido(lead_email or ""):
+            st.error("Revisa el correo electrónico, parece que no es válido.")
+        elif not lead_ok:
+            st.error("Necesitamos tu consentimiento para poder contactarte.")
+        else:
+            ultimo = (st.session_state.get("resultado") or {}).get("informe", {})
+            guardar_lead(
+                lead_email,
+                lead_nombre or "",
+                lead_empresa or "",
+                lead_ok,
+                producto=ultimo.get("producto_detectado", ""),
+                categoria=ultimo.get("categoria", ""),
+            )
+            # Aunque falle la hoja, el contacto queda en el registro (LEAD_PENDIENTE): no molestamos al visitante.
+            st.session_state["lead_enviado"] = True
+            st.rerun()
+
 c1, c2 = st.columns(2)
 with c1:
     st.link_button("✉️ Escríbenos", f"mailto:{EMAIL_CONTACTO}?subject=Demo%20visi%C3%B3n%20artificial", use_container_width=True)
@@ -440,4 +484,8 @@ st.markdown(
 
 if config("MOSTRAR_DIAGNOSTICO", "0") == "1":
     with st.expander("Diagnóstico (solo equipo)"):
-        st.write({"proveedores": orden_proveedores(), "usos_globales_hora": contador_global()["n"]})
+        st.write({
+            "proveedores": orden_proveedores(),
+            "usos_globales_hora": contador_global()["n"],
+            "hoja_leads_configurada": bool(config("LEADS_WEBHOOK_URL", "")),
+        })
