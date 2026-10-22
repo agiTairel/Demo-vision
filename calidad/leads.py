@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import json
 import re
+import urllib.error
 import urllib.request
 from datetime import datetime, timezone
 
@@ -44,20 +45,33 @@ def guardar_lead(email: str, nombre: str, empresa: str, consentimiento: bool,
         "consentimiento": bool(consentimiento),
         "origen": config("LEADS_ORIGEN", "Demo visión artificial · evento agro"),
     }
-    url = config("LEADS_WEBHOOK_URL", "")
+    url = (config("LEADS_WEBHOOK_URL", "") or "").strip()
     if url:
         try:
+            # Google rechaza con 403 algunas peticiones con el agente por defecto de Python,
+            # así que nos identificamos como un navegador normal.
             req = urllib.request.Request(
                 url,
                 data=json.dumps(fila).encode("utf-8"),
-                headers={"Content-Type": "application/json"},
+                headers={
+                    "Content-Type": "application/json",
+                    "User-Agent": "Mozilla/5.0 (compatible; TairelDemo/1.0)",
+                    "Accept": "application/json,text/plain,*/*",
+                },
                 method="POST",
             )
-            with urllib.request.urlopen(req, timeout=15) as r:
-                respuesta = json.loads(r.read().decode("utf-8") or "{}")
+            with urllib.request.urlopen(req, timeout=20) as r:
+                cuerpo = r.read().decode("utf-8", "replace")
+            try:
+                respuesta = json.loads(cuerpo or "{}")
+            except json.JSONDecodeError:
+                respuesta = {"ok": False, "cuerpo": cuerpo[:300]}
             if respuesta.get("ok"):
                 return True
             print("ERROR lead: respuesta", respuesta, flush=True)
+        except urllib.error.HTTPError as e:
+            detalle = e.read().decode("utf-8", "replace")[:300].replace("\n", " ")
+            print(f"ERROR lead: HTTP {e.code} en {e.geturl()} :: {detalle}", flush=True)
         except Exception as e:  # noqa: BLE001
             print("ERROR lead:", type(e).__name__, e, flush=True)
     sin_token = {k: v for k, v in fila.items() if k != "token"}
