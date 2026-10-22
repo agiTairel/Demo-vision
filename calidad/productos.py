@@ -76,11 +76,11 @@ PRODUCTOS = {
 CATEGORIAS = ["Extra", "I", "II", "Destrío", "No evaluable"]
 
 COLOR_CATEGORIA = {
-    "Extra": "#1a8f4c",
-    "I": "#0168cb",
-    "II": "#e0a100",
-    "Destrío": "#c62828",
-    "No evaluable": "#6b6b6b",
+    "Extra": "#2a7230",
+    "I": "#25689f",
+    "II": "#9a6a00",
+    "Destrío": "#b3361f",
+    "No evaluable": "#566354",
 }
 
 TEXTO_CATEGORIA = {
