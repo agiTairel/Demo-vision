@@ -77,14 +77,6 @@ Genera `qr_demo.png` en azul Tairel con el icono en el centro. Úsalo en la últ
 
 Pon también un límite de gasto mensual en la consola de cada proveedor.
 
-## Checklist del día del evento
-
-- Abrir la demo 10 minutos antes del pitch (los planes gratuitos se duermen tras un rato sin uso).
-- Probar una foto real con datos móviles, no solo con wifi.
-- Llevar fruta y verdura al stand, incluidas piezas con defectos.
-- Tener un vídeo grabado de la demo por si falla la conexión.
-- Dejar la diapositiva del QR en pantalla durante las preguntas.
-
 ## Privacidad
 
 Las imágenes se envían al proveedor de IA solo para generar el informe y la app no las guarda. Los resultados se cachean en memoria del servidor mientras la app está activa para no repetir llamadas con la misma imagen.
