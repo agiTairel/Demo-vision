@@ -1,0 +1,3548 @@
+{
+"demo": true,
+"nota": "Histórico SINTÉTICO de 10 campañas en Navarra para la demo. Sustituir por datos reales (boletines de avisos, cierres de campaña, precios de lonja).",
+"zona": "Navarra",
+"cultivos": {
+"lechuga": {
+"rendimiento_kg_ha": 30000,
+"precio_eur_kg": 0.45
+},
+"canonigos": {
+"rendimiento_kg_ha": 9000,
+"precio_eur_kg": 3.2
+},
+"espinaca": {
+"rendimiento_kg_ha": 20000,
+"precio_eur_kg": 0.6
+},
+"brocoli": {
+"rendimiento_kg_ha": 14000,
+"precio_eur_kg": 0.55
+},
+"guisante": {
+"rendimiento_kg_ha": 6000,
+"precio_eur_kg": 0.48
+},
+"trigo": {
+"rendimiento_kg_ha": 4500,
+"precio_eur_kg": 0.23
+},
+"cebada": {
+"rendimiento_kg_ha": 4200,
+"precio_eur_kg": 0.2
+},
+"maiz": {
+"rendimiento_kg_ha": 12500,
+"precio_eur_kg": 0.21
+}
+},
+"plagas": {
+"lechuga": {
+"mildiu": {
+"sinonimos": [
+"mildiu",
+"bremia"
+]
+},
+"pulgon": {
+"sinonimos": [
+"pulgon",
+"pulgones",
+"nasonovia",
+"afido"
+]
+},
+"esclerotinia": {
+"sinonimos": [
+"esclerotinia",
+"sclerotinia"
+]
+},
+"tip burn": {
+"sinonimos": [
+"tip burn",
+"quemado de bordes",
+"quemado del borde"
+]
+},
+"botritis": {
+"sinonimos": [
+"botritis",
+"botrytis",
+"podredumbre gris"
+]
+},
+"trips": {
+"sinonimos": [
+"trips",
+"tswv",
+"bronceado"
+]
+}
+},
+"canonigos": {
+"mildiu": {
+"sinonimos": [
+"mildiu",
+"peronospora"
+]
+},
+"oidio": {
+"sinonimos": [
+"oidio",
+"oídio",
+"polvo blanco"
+]
+},
+"pulgon": {
+"sinonimos": [
+"pulgon",
+"pulgón"
+]
+}
+},
+"espinaca": {
+"mildiu": {
+"sinonimos": [
+"mildiu",
+"peronospora"
+]
+},
+"cladosporiosis": {
+"sinonimos": [
+"cladosporiosis",
+"cladosporium"
+]
+},
+"minador": {
+"sinonimos": [
+"minador",
+"minadores",
+"liriomyza"
+]
+},
+"pulgon": {
+"sinonimos": [
+"pulgon",
+"pulgón"
+]
+}
+},
+"brocoli": {
+"mildiu": {
+"sinonimos": [
+"mildiu",
+"hyaloperonospora"
+]
+},
+"alternaria": {
+"sinonimos": [
+"alternaria",
+"mancha negra"
+]
+},
+"oruga de la col": {
+"sinonimos": [
+"oruga",
+"pieris",
+"plutella",
+"polilla de las cruciferas",
+"polilla de las crucíferas"
+]
+},
+"pulgon ceroso": {
+"sinonimos": [
+"pulgon ceroso",
+"pulgón ceroso",
+"brevicoryne",
+"pulgon",
+"pulgón"
+]
+},
+"amarilleo de floretes": {
+"sinonimos": [
+"floretes amarillos",
+"amarilleo",
+"floretes abiertos"
+]
+}
+},
+"guisante": {
+"oidio": {
+"sinonimos": [
+"oidio",
+"oídio",
+"polvo blanco",
+"erysiphe"
+]
+},
+"ascoquitosis": {
+"sinonimos": [
+"ascoquitosis",
+"ascochyta"
+]
+},
+"sitona": {
+"sinonimos": [
+"sitona"
+]
+},
+"pulgon verde": {
+"sinonimos": [
+"pulgon",
+"pulgón",
+"acyrthosiphon"
+]
+}
+},
+"trigo": {
+"roya amarilla": {
+"sinonimos": [
+"roya amarilla",
+"puccinia striiformis",
+"roya"
+]
+},
+"septoriosis": {
+"sinonimos": [
+"septoriosis",
+"septoria",
+"zymoseptoria"
+]
+},
+"fusariosis": {
+"sinonimos": [
+"fusariosis",
+"fusarium",
+"espiga blanca",
+"espigas blanquecinas"
+]
+},
+"oidio": {
+"sinonimos": [
+"oidio",
+"oídio"
+]
+},
+"pulgon": {
+"sinonimos": [
+"pulgon",
+"pulgón"
+]
+}
+},
+"cebada": {
+"rincosporiosis": {
+"sinonimos": [
+"rincosporiosis",
+"rhynchosporium",
+"escaldadura"
+]
+},
+"helmintosporiosis": {
+"sinonimos": [
+"helmintosporiosis",
+"mancha en red",
+"pyrenophora",
+"drechslera"
+]
+},
+"roya parda": {
+"sinonimos": [
+"roya parda",
+"puccinia hordei",
+"roya"
+]
+},
+"enanismo amarillo": {
+"sinonimos": [
+"enanismo amarillo",
+"bydv",
+"virus del enanismo"
+]
+}
+},
+"maiz": {
+"taladro": {
+"sinonimos": [
+"taladro",
+"sesamia",
+"ostrinia",
+"barrenador",
+"galerias"
+]
+},
+"fusarium en mazorca": {
+"sinonimos": [
+"fusarium",
+"moho",
+"podredumbre de mazorca"
+]
+},
+"arana roja": {
+"sinonimos": [
+"arana roja",
+"araña roja",
+"tetranychus",
+"acaros",
+"ácaros"
+]
+},
+"gusano de alambre": {
+"sinonimos": [
+"gusano de alambre",
+"agriotes"
+]
+},
+"carbon comun": {
+"sinonimos": [
+"carbon",
+"carbón",
+"ustilago"
+]
+}
+}
+},
+"registros": [
+{
+"campaña": "2016-17",
+"cultivo": "lechuga",
+"plaga": "mildiu",
+"incidencia": true,
+"pct_explotaciones_afectadas": 20.7,
+"merma_pct": 9.9,
+"precio_medio_eur_kg": 0.448
+},
+{
+"campaña": "2017-18",
+"cultivo": "lechuga",
+"plaga": "mildiu",
+"incidencia": true,
+"pct_explotaciones_afectadas": 10.4,
+"merma_pct": 8.5,
+"precio_medio_eur_kg": 0.449
+},
+{
+"campaña": "2018-19",
+"cultivo": "lechuga",
+"plaga": "mildiu",
+"incidencia": true,
+"pct_explotaciones_afectadas": 13.2,
+"merma_pct": 16.7,
+"precio_medio_eur_kg": 0.478
+},
+{
+"campaña": "2019-20",
+"cultivo": "lechuga",
+"plaga": "mildiu",
+"incidencia": true,
+"pct_explotaciones_afectadas": 10.6,
+"merma_pct": 11.5,
+"precio_medio_eur_kg": 0.467
+},
+{
+"campaña": "2020-21",
+"cultivo": "lechuga",
+"plaga": "mildiu",
+"incidencia": true,
+"pct_explotaciones_afectadas": 33.1,
+"merma_pct": 10.6,
+"precio_medio_eur_kg": 0.463
+},
+{
+"campaña": "2021-22",
+"cultivo": "lechuga",
+"plaga": "mildiu",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.442
+},
+{
+"campaña": "2022-23",
+"cultivo": "lechuga",
+"plaga": "mildiu",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.453
+},
+{
+"campaña": "2023-24",
+"cultivo": "lechuga",
+"plaga": "mildiu",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.455
+},
+{
+"campaña": "2024-25",
+"cultivo": "lechuga",
+"plaga": "mildiu",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.461
+},
+{
+"campaña": "2025-26",
+"cultivo": "lechuga",
+"plaga": "mildiu",
+"incidencia": true,
+"pct_explotaciones_afectadas": 27.0,
+"merma_pct": 14.6,
+"precio_medio_eur_kg": 0.513
+},
+{
+"campaña": "2016-17",
+"cultivo": "lechuga",
+"plaga": "pulgon",
+"incidencia": true,
+"pct_explotaciones_afectadas": 15.3,
+"merma_pct": 7.9,
+"precio_medio_eur_kg": 0.439
+},
+{
+"campaña": "2017-18",
+"cultivo": "lechuga",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.433
+},
+{
+"campaña": "2018-19",
+"cultivo": "lechuga",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.437
+},
+{
+"campaña": "2019-20",
+"cultivo": "lechuga",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.433
+},
+{
+"campaña": "2020-21",
+"cultivo": "lechuga",
+"plaga": "pulgon",
+"incidencia": true,
+"pct_explotaciones_afectadas": 26.0,
+"merma_pct": 7.8,
+"precio_medio_eur_kg": 0.465
+},
+{
+"campaña": "2021-22",
+"cultivo": "lechuga",
+"plaga": "pulgon",
+"incidencia": true,
+"pct_explotaciones_afectadas": 27.5,
+"merma_pct": 6.1,
+"precio_medio_eur_kg": 0.456
+},
+{
+"campaña": "2022-23",
+"cultivo": "lechuga",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.454
+},
+{
+"campaña": "2023-24",
+"cultivo": "lechuga",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.462
+},
+{
+"campaña": "2024-25",
+"cultivo": "lechuga",
+"plaga": "pulgon",
+"incidencia": true,
+"pct_explotaciones_afectadas": 18.4,
+"merma_pct": 8.6,
+"precio_medio_eur_kg": 0.488
+},
+{
+"campaña": "2025-26",
+"cultivo": "lechuga",
+"plaga": "pulgon",
+"incidencia": true,
+"pct_explotaciones_afectadas": 37.0,
+"merma_pct": 3.7,
+"precio_medio_eur_kg": 0.481
+},
+{
+"campaña": "2016-17",
+"cultivo": "lechuga",
+"plaga": "esclerotinia",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.419
+},
+{
+"campaña": "2017-18",
+"cultivo": "lechuga",
+"plaga": "esclerotinia",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.422
+},
+{
+"campaña": "2018-19",
+"cultivo": "lechuga",
+"plaga": "esclerotinia",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.439
+},
+{
+"campaña": "2019-20",
+"cultivo": "lechuga",
+"plaga": "esclerotinia",
+"incidencia": true,
+"pct_explotaciones_afectadas": 34.9,
+"merma_pct": 9.7,
+"precio_medio_eur_kg": 0.456
+},
+{
+"campaña": "2020-21",
+"cultivo": "lechuga",
+"plaga": "esclerotinia",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.445
+},
+{
+"campaña": "2021-22",
+"cultivo": "lechuga",
+"plaga": "esclerotinia",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.458
+},
+{
+"campaña": "2022-23",
+"cultivo": "lechuga",
+"plaga": "esclerotinia",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.457
+},
+{
+"campaña": "2023-24",
+"cultivo": "lechuga",
+"plaga": "esclerotinia",
+"incidencia": true,
+"pct_explotaciones_afectadas": 15.0,
+"merma_pct": 11.6,
+"precio_medio_eur_kg": 0.496
+},
+{
+"campaña": "2024-25",
+"cultivo": "lechuga",
+"plaga": "esclerotinia",
+"incidencia": true,
+"pct_explotaciones_afectadas": 22.5,
+"merma_pct": 4.4,
+"precio_medio_eur_kg": 0.468
+},
+{
+"campaña": "2025-26",
+"cultivo": "lechuga",
+"plaga": "esclerotinia",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.477
+},
+{
+"campaña": "2016-17",
+"cultivo": "lechuga",
+"plaga": "tip burn",
+"incidencia": true,
+"pct_explotaciones_afectadas": 23.4,
+"merma_pct": 7.7,
+"precio_medio_eur_kg": 0.432
+},
+{
+"campaña": "2017-18",
+"cultivo": "lechuga",
+"plaga": "tip burn",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.42
+},
+{
+"campaña": "2018-19",
+"cultivo": "lechuga",
+"plaga": "tip burn",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.439
+},
+{
+"campaña": "2019-20",
+"cultivo": "lechuga",
+"plaga": "tip burn",
+"incidencia": true,
+"pct_explotaciones_afectadas": 11.1,
+"merma_pct": 4.9,
+"precio_medio_eur_kg": 0.446
+},
+{
+"campaña": "2020-21",
+"cultivo": "lechuga",
+"plaga": "tip burn",
+"incidencia": true,
+"pct_explotaciones_afectadas": 32.6,
+"merma_pct": 5.3,
+"precio_medio_eur_kg": 0.456
+},
+{
+"campaña": "2021-22",
+"cultivo": "lechuga",
+"plaga": "tip burn",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.446
+},
+{
+"campaña": "2022-23",
+"cultivo": "lechuga",
+"plaga": "tip burn",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.448
+},
+{
+"campaña": "2023-24",
+"cultivo": "lechuga",
+"plaga": "tip burn",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.462
+},
+{
+"campaña": "2024-25",
+"cultivo": "lechuga",
+"plaga": "tip burn",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.469
+},
+{
+"campaña": "2025-26",
+"cultivo": "lechuga",
+"plaga": "tip burn",
+"incidencia": true,
+"pct_explotaciones_afectadas": 26.7,
+"merma_pct": 6.1,
+"precio_medio_eur_kg": 0.481
+},
+{
+"campaña": "2016-17",
+"cultivo": "lechuga",
+"plaga": "botritis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.43
+},
+{
+"campaña": "2017-18",
+"cultivo": "lechuga",
+"plaga": "botritis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 20.3,
+"merma_pct": 6.1,
+"precio_medio_eur_kg": 0.448
+},
+{
+"campaña": "2018-19",
+"cultivo": "lechuga",
+"plaga": "botritis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 36.9,
+"merma_pct": 8.7,
+"precio_medio_eur_kg": 0.456
+},
+{
+"campaña": "2019-20",
+"cultivo": "lechuga",
+"plaga": "botritis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.438
+},
+{
+"campaña": "2020-21",
+"cultivo": "lechuga",
+"plaga": "botritis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.448
+},
+{
+"campaña": "2021-22",
+"cultivo": "lechuga",
+"plaga": "botritis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.456
+},
+{
+"campaña": "2022-23",
+"cultivo": "lechuga",
+"plaga": "botritis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 17.2,
+"merma_pct": 7.5,
+"precio_medio_eur_kg": 0.469
+},
+{
+"campaña": "2023-24",
+"cultivo": "lechuga",
+"plaga": "botritis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.459
+},
+{
+"campaña": "2024-25",
+"cultivo": "lechuga",
+"plaga": "botritis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.471
+},
+{
+"campaña": "2025-26",
+"cultivo": "lechuga",
+"plaga": "botritis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.473
+},
+{
+"campaña": "2016-17",
+"cultivo": "lechuga",
+"plaga": "trips",
+"incidencia": true,
+"pct_explotaciones_afectadas": 28.9,
+"merma_pct": 3.8,
+"precio_medio_eur_kg": 0.428
+},
+{
+"campaña": "2017-18",
+"cultivo": "lechuga",
+"plaga": "trips",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.429
+},
+{
+"campaña": "2018-19",
+"cultivo": "lechuga",
+"plaga": "trips",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.44
+},
+{
+"campaña": "2019-20",
+"cultivo": "lechuga",
+"plaga": "trips",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.435
+},
+{
+"campaña": "2020-21",
+"cultivo": "lechuga",
+"plaga": "trips",
+"incidencia": true,
+"pct_explotaciones_afectadas": 12.4,
+"merma_pct": 9.7,
+"precio_medio_eur_kg": 0.467
+},
+{
+"campaña": "2021-22",
+"cultivo": "lechuga",
+"plaga": "trips",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.451
+},
+{
+"campaña": "2022-23",
+"cultivo": "lechuga",
+"plaga": "trips",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.451
+},
+{
+"campaña": "2023-24",
+"cultivo": "lechuga",
+"plaga": "trips",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.462
+},
+{
+"campaña": "2024-25",
+"cultivo": "lechuga",
+"plaga": "trips",
+"incidencia": true,
+"pct_explotaciones_afectadas": 23.5,
+"merma_pct": 6.3,
+"precio_medio_eur_kg": 0.485
+},
+{
+"campaña": "2025-26",
+"cultivo": "lechuga",
+"plaga": "trips",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.462
+},
+{
+"campaña": "2016-17",
+"cultivo": "canonigos",
+"plaga": "mildiu",
+"incidencia": true,
+"pct_explotaciones_afectadas": 10.9,
+"merma_pct": 17.1,
+"precio_medio_eur_kg": 3.284
+},
+{
+"campaña": "2017-18",
+"cultivo": "canonigos",
+"plaga": "mildiu",
+"incidencia": true,
+"pct_explotaciones_afectadas": 38.6,
+"merma_pct": 16.4,
+"precio_medio_eur_kg": 3.286
+},
+{
+"campaña": "2018-19",
+"cultivo": "canonigos",
+"plaga": "mildiu",
+"incidencia": true,
+"pct_explotaciones_afectadas": 27.9,
+"merma_pct": 9.9,
+"precio_medio_eur_kg": 3.298
+},
+{
+"campaña": "2019-20",
+"cultivo": "canonigos",
+"plaga": "mildiu",
+"incidencia": true,
+"pct_explotaciones_afectadas": 15.3,
+"merma_pct": 16.1,
+"precio_medio_eur_kg": 3.379
+},
+{
+"campaña": "2020-21",
+"cultivo": "canonigos",
+"plaga": "mildiu",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 3.132
+},
+{
+"campaña": "2021-22",
+"cultivo": "canonigos",
+"plaga": "mildiu",
+"incidencia": true,
+"pct_explotaciones_afectadas": 16.8,
+"merma_pct": 19.9,
+"precio_medio_eur_kg": 3.462
+},
+{
+"campaña": "2022-23",
+"cultivo": "canonigos",
+"plaga": "mildiu",
+"incidencia": true,
+"pct_explotaciones_afectadas": 21.3,
+"merma_pct": 18.5,
+"precio_medio_eur_kg": 3.475
+},
+{
+"campaña": "2023-24",
+"cultivo": "canonigos",
+"plaga": "mildiu",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 3.271
+},
+{
+"campaña": "2024-25",
+"cultivo": "canonigos",
+"plaga": "mildiu",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 3.304
+},
+{
+"campaña": "2025-26",
+"cultivo": "canonigos",
+"plaga": "mildiu",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 3.378
+},
+{
+"campaña": "2016-17",
+"cultivo": "canonigos",
+"plaga": "oidio",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 3.063
+},
+{
+"campaña": "2017-18",
+"cultivo": "canonigos",
+"plaga": "oidio",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 3.027
+},
+{
+"campaña": "2018-19",
+"cultivo": "canonigos",
+"plaga": "oidio",
+"incidencia": true,
+"pct_explotaciones_afectadas": 22.6,
+"merma_pct": 5.7,
+"precio_medio_eur_kg": 3.212
+},
+{
+"campaña": "2019-20",
+"cultivo": "canonigos",
+"plaga": "oidio",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 3.12
+},
+{
+"campaña": "2020-21",
+"cultivo": "canonigos",
+"plaga": "oidio",
+"incidencia": true,
+"pct_explotaciones_afectadas": 17.7,
+"merma_pct": 6.9,
+"precio_medio_eur_kg": 3.243
+},
+{
+"campaña": "2021-22",
+"cultivo": "canonigos",
+"plaga": "oidio",
+"incidencia": true,
+"pct_explotaciones_afectadas": 16.5,
+"merma_pct": 3.6,
+"precio_medio_eur_kg": 3.227
+},
+{
+"campaña": "2022-23",
+"cultivo": "canonigos",
+"plaga": "oidio",
+"incidencia": true,
+"pct_explotaciones_afectadas": 25.1,
+"merma_pct": 9.0,
+"precio_medio_eur_kg": 3.334
+},
+{
+"campaña": "2023-24",
+"cultivo": "canonigos",
+"plaga": "oidio",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 3.272
+},
+{
+"campaña": "2024-25",
+"cultivo": "canonigos",
+"plaga": "oidio",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 3.265
+},
+{
+"campaña": "2025-26",
+"cultivo": "canonigos",
+"plaga": "oidio",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 3.362
+},
+{
+"campaña": "2016-17",
+"cultivo": "canonigos",
+"plaga": "pulgon",
+"incidencia": true,
+"pct_explotaciones_afectadas": 35.5,
+"merma_pct": 3.3,
+"precio_medio_eur_kg": 3.027
+},
+{
+"campaña": "2017-18",
+"cultivo": "canonigos",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 3.105
+},
+{
+"campaña": "2018-19",
+"cultivo": "canonigos",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 3.101
+},
+{
+"campaña": "2019-20",
+"cultivo": "canonigos",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 3.066
+},
+{
+"campaña": "2020-21",
+"cultivo": "canonigos",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 3.2
+},
+{
+"campaña": "2021-22",
+"cultivo": "canonigos",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 3.171
+},
+{
+"campaña": "2022-23",
+"cultivo": "canonigos",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 3.221
+},
+{
+"campaña": "2023-24",
+"cultivo": "canonigos",
+"plaga": "pulgon",
+"incidencia": true,
+"pct_explotaciones_afectadas": 35.1,
+"merma_pct": 2.7,
+"precio_medio_eur_kg": 3.267
+},
+{
+"campaña": "2024-25",
+"cultivo": "canonigos",
+"plaga": "pulgon",
+"incidencia": true,
+"pct_explotaciones_afectadas": 21.9,
+"merma_pct": 5.7,
+"precio_medio_eur_kg": 3.433
+},
+{
+"campaña": "2025-26",
+"cultivo": "canonigos",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 3.326
+},
+{
+"campaña": "2016-17",
+"cultivo": "espinaca",
+"plaga": "mildiu",
+"incidencia": true,
+"pct_explotaciones_afectadas": 14.1,
+"merma_pct": 21.8,
+"precio_medio_eur_kg": 0.63
+},
+{
+"campaña": "2017-18",
+"cultivo": "espinaca",
+"plaga": "mildiu",
+"incidencia": true,
+"pct_explotaciones_afectadas": 18.8,
+"merma_pct": 20.9,
+"precio_medio_eur_kg": 0.64
+},
+{
+"campaña": "2018-19",
+"cultivo": "espinaca",
+"plaga": "mildiu",
+"incidencia": true,
+"pct_explotaciones_afectadas": 33.8,
+"merma_pct": 10.7,
+"precio_medio_eur_kg": 0.599
+},
+{
+"campaña": "2019-20",
+"cultivo": "espinaca",
+"plaga": "mildiu",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.575
+},
+{
+"campaña": "2020-21",
+"cultivo": "espinaca",
+"plaga": "mildiu",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.599
+},
+{
+"campaña": "2021-22",
+"cultivo": "espinaca",
+"plaga": "mildiu",
+"incidencia": true,
+"pct_explotaciones_afectadas": 10.9,
+"merma_pct": 7.6,
+"precio_medio_eur_kg": 0.619
+},
+{
+"campaña": "2022-23",
+"cultivo": "espinaca",
+"plaga": "mildiu",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.599
+},
+{
+"campaña": "2023-24",
+"cultivo": "espinaca",
+"plaga": "mildiu",
+"incidencia": true,
+"pct_explotaciones_afectadas": 39.0,
+"merma_pct": 9.4,
+"precio_medio_eur_kg": 0.655
+},
+{
+"campaña": "2024-25",
+"cultivo": "espinaca",
+"plaga": "mildiu",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.628
+},
+{
+"campaña": "2025-26",
+"cultivo": "espinaca",
+"plaga": "mildiu",
+"incidencia": true,
+"pct_explotaciones_afectadas": 27.6,
+"merma_pct": 9.6,
+"precio_medio_eur_kg": 0.67
+},
+{
+"campaña": "2016-17",
+"cultivo": "espinaca",
+"plaga": "cladosporiosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.57
+},
+{
+"campaña": "2017-18",
+"cultivo": "espinaca",
+"plaga": "cladosporiosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.581
+},
+{
+"campaña": "2018-19",
+"cultivo": "espinaca",
+"plaga": "cladosporiosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.574
+},
+{
+"campaña": "2019-20",
+"cultivo": "espinaca",
+"plaga": "cladosporiosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 39.4,
+"merma_pct": 8.3,
+"precio_medio_eur_kg": 0.621
+},
+{
+"campaña": "2020-21",
+"cultivo": "espinaca",
+"plaga": "cladosporiosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.584
+},
+{
+"campaña": "2021-22",
+"cultivo": "espinaca",
+"plaga": "cladosporiosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 33.2,
+"merma_pct": 5.3,
+"precio_medio_eur_kg": 0.624
+},
+{
+"campaña": "2022-23",
+"cultivo": "espinaca",
+"plaga": "cladosporiosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.596
+},
+{
+"campaña": "2023-24",
+"cultivo": "espinaca",
+"plaga": "cladosporiosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.612
+},
+{
+"campaña": "2024-25",
+"cultivo": "espinaca",
+"plaga": "cladosporiosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 32.7,
+"merma_pct": 7.3,
+"precio_medio_eur_kg": 0.645
+},
+{
+"campaña": "2025-26",
+"cultivo": "espinaca",
+"plaga": "cladosporiosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.622
+},
+{
+"campaña": "2016-17",
+"cultivo": "espinaca",
+"plaga": "minador",
+"incidencia": true,
+"pct_explotaciones_afectadas": 22.8,
+"merma_pct": 3.9,
+"precio_medio_eur_kg": 0.582
+},
+{
+"campaña": "2017-18",
+"cultivo": "espinaca",
+"plaga": "minador",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.573
+},
+{
+"campaña": "2018-19",
+"cultivo": "espinaca",
+"plaga": "minador",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.576
+},
+{
+"campaña": "2019-20",
+"cultivo": "espinaca",
+"plaga": "minador",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.58
+},
+{
+"campaña": "2020-21",
+"cultivo": "espinaca",
+"plaga": "minador",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.588
+},
+{
+"campaña": "2021-22",
+"cultivo": "espinaca",
+"plaga": "minador",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.604
+},
+{
+"campaña": "2022-23",
+"cultivo": "espinaca",
+"plaga": "minador",
+"incidencia": true,
+"pct_explotaciones_afectadas": 15.2,
+"merma_pct": 4.7,
+"precio_medio_eur_kg": 0.629
+},
+{
+"campaña": "2023-24",
+"cultivo": "espinaca",
+"plaga": "minador",
+"incidencia": true,
+"pct_explotaciones_afectadas": 39.0,
+"merma_pct": 5.5,
+"precio_medio_eur_kg": 0.632
+},
+{
+"campaña": "2024-25",
+"cultivo": "espinaca",
+"plaga": "minador",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.625
+},
+{
+"campaña": "2025-26",
+"cultivo": "espinaca",
+"plaga": "minador",
+"incidencia": true,
+"pct_explotaciones_afectadas": 28.2,
+"merma_pct": 4.6,
+"precio_medio_eur_kg": 0.654
+},
+{
+"campaña": "2016-17",
+"cultivo": "espinaca",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.563
+},
+{
+"campaña": "2017-18",
+"cultivo": "espinaca",
+"plaga": "pulgon",
+"incidencia": true,
+"pct_explotaciones_afectadas": 29.1,
+"merma_pct": 2.0,
+"precio_medio_eur_kg": 0.571
+},
+{
+"campaña": "2018-19",
+"cultivo": "espinaca",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.584
+},
+{
+"campaña": "2019-20",
+"cultivo": "espinaca",
+"plaga": "pulgon",
+"incidencia": true,
+"pct_explotaciones_afectadas": 20.5,
+"merma_pct": 3.7,
+"precio_medio_eur_kg": 0.607
+},
+{
+"campaña": "2020-21",
+"cultivo": "espinaca",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.597
+},
+{
+"campaña": "2021-22",
+"cultivo": "espinaca",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.612
+},
+{
+"campaña": "2022-23",
+"cultivo": "espinaca",
+"plaga": "pulgon",
+"incidencia": true,
+"pct_explotaciones_afectadas": 31.6,
+"merma_pct": 5.5,
+"precio_medio_eur_kg": 0.615
+},
+{
+"campaña": "2023-24",
+"cultivo": "espinaca",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.626
+},
+{
+"campaña": "2024-25",
+"cultivo": "espinaca",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.628
+},
+{
+"campaña": "2025-26",
+"cultivo": "espinaca",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.637
+},
+{
+"campaña": "2016-17",
+"cultivo": "brocoli",
+"plaga": "mildiu",
+"incidencia": true,
+"pct_explotaciones_afectadas": 30.6,
+"merma_pct": 7.4,
+"precio_medio_eur_kg": 0.546
+},
+{
+"campaña": "2017-18",
+"cultivo": "brocoli",
+"plaga": "mildiu",
+"incidencia": true,
+"pct_explotaciones_afectadas": 13.5,
+"merma_pct": 10.4,
+"precio_medio_eur_kg": 0.541
+},
+{
+"campaña": "2018-19",
+"cultivo": "brocoli",
+"plaga": "mildiu",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.531
+},
+{
+"campaña": "2019-20",
+"cultivo": "brocoli",
+"plaga": "mildiu",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.531
+},
+{
+"campaña": "2020-21",
+"cultivo": "brocoli",
+"plaga": "mildiu",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.547
+},
+{
+"campaña": "2021-22",
+"cultivo": "brocoli",
+"plaga": "mildiu",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.558
+},
+{
+"campaña": "2022-23",
+"cultivo": "brocoli",
+"plaga": "mildiu",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.563
+},
+{
+"campaña": "2023-24",
+"cultivo": "brocoli",
+"plaga": "mildiu",
+"incidencia": true,
+"pct_explotaciones_afectadas": 31.1,
+"merma_pct": 6.5,
+"precio_medio_eur_kg": 0.58
+},
+{
+"campaña": "2024-25",
+"cultivo": "brocoli",
+"plaga": "mildiu",
+"incidencia": true,
+"pct_explotaciones_afectadas": 38.1,
+"merma_pct": 11.3,
+"precio_medio_eur_kg": 0.603
+},
+{
+"campaña": "2025-26",
+"cultivo": "brocoli",
+"plaga": "mildiu",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.573
+},
+{
+"campaña": "2016-17",
+"cultivo": "brocoli",
+"plaga": "alternaria",
+"incidencia": true,
+"pct_explotaciones_afectadas": 14.2,
+"merma_pct": 9.2,
+"precio_medio_eur_kg": 0.55
+},
+{
+"campaña": "2017-18",
+"cultivo": "brocoli",
+"plaga": "alternaria",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.528
+},
+{
+"campaña": "2018-19",
+"cultivo": "brocoli",
+"plaga": "alternaria",
+"incidencia": true,
+"pct_explotaciones_afectadas": 17.5,
+"merma_pct": 5.5,
+"precio_medio_eur_kg": 0.554
+},
+{
+"campaña": "2019-20",
+"cultivo": "brocoli",
+"plaga": "alternaria",
+"incidencia": true,
+"pct_explotaciones_afectadas": 34.9,
+"merma_pct": 7.7,
+"precio_medio_eur_kg": 0.567
+},
+{
+"campaña": "2020-21",
+"cultivo": "brocoli",
+"plaga": "alternaria",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.533
+},
+{
+"campaña": "2021-22",
+"cultivo": "brocoli",
+"plaga": "alternaria",
+"incidencia": true,
+"pct_explotaciones_afectadas": 38.1,
+"merma_pct": 6.8,
+"precio_medio_eur_kg": 0.558
+},
+{
+"campaña": "2022-23",
+"cultivo": "brocoli",
+"plaga": "alternaria",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.551
+},
+{
+"campaña": "2023-24",
+"cultivo": "brocoli",
+"plaga": "alternaria",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.564
+},
+{
+"campaña": "2024-25",
+"cultivo": "brocoli",
+"plaga": "alternaria",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.568
+},
+{
+"campaña": "2025-26",
+"cultivo": "brocoli",
+"plaga": "alternaria",
+"incidencia": true,
+"pct_explotaciones_afectadas": 10.2,
+"merma_pct": 8.1,
+"precio_medio_eur_kg": 0.609
+},
+{
+"campaña": "2016-17",
+"cultivo": "brocoli",
+"plaga": "oruga de la col",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.508
+},
+{
+"campaña": "2017-18",
+"cultivo": "brocoli",
+"plaga": "oruga de la col",
+"incidencia": true,
+"pct_explotaciones_afectadas": 14.3,
+"merma_pct": 12.3,
+"precio_medio_eur_kg": 0.566
+},
+{
+"campaña": "2018-19",
+"cultivo": "brocoli",
+"plaga": "oruga de la col",
+"incidencia": true,
+"pct_explotaciones_afectadas": 34.3,
+"merma_pct": 5.0,
+"precio_medio_eur_kg": 0.549
+},
+{
+"campaña": "2019-20",
+"cultivo": "brocoli",
+"plaga": "oruga de la col",
+"incidencia": true,
+"pct_explotaciones_afectadas": 27.2,
+"merma_pct": 11.3,
+"precio_medio_eur_kg": 0.574
+},
+{
+"campaña": "2020-21",
+"cultivo": "brocoli",
+"plaga": "oruga de la col",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.546
+},
+{
+"campaña": "2021-22",
+"cultivo": "brocoli",
+"plaga": "oruga de la col",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.542
+},
+{
+"campaña": "2022-23",
+"cultivo": "brocoli",
+"plaga": "oruga de la col",
+"incidencia": true,
+"pct_explotaciones_afectadas": 20.6,
+"merma_pct": 13.8,
+"precio_medio_eur_kg": 0.597
+},
+{
+"campaña": "2023-24",
+"cultivo": "brocoli",
+"plaga": "oruga de la col",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.563
+},
+{
+"campaña": "2024-25",
+"cultivo": "brocoli",
+"plaga": "oruga de la col",
+"incidencia": true,
+"pct_explotaciones_afectadas": 22.4,
+"merma_pct": 14.9,
+"precio_medio_eur_kg": 0.62
+},
+{
+"campaña": "2025-26",
+"cultivo": "brocoli",
+"plaga": "oruga de la col",
+"incidencia": true,
+"pct_explotaciones_afectadas": 19.8,
+"merma_pct": 5.9,
+"precio_medio_eur_kg": 0.597
+},
+{
+"campaña": "2016-17",
+"cultivo": "brocoli",
+"plaga": "pulgon ceroso",
+"incidencia": true,
+"pct_explotaciones_afectadas": 35.2,
+"merma_pct": 3.8,
+"precio_medio_eur_kg": 0.519
+},
+{
+"campaña": "2017-18",
+"cultivo": "brocoli",
+"plaga": "pulgon ceroso",
+"incidencia": true,
+"pct_explotaciones_afectadas": 34.6,
+"merma_pct": 2.9,
+"precio_medio_eur_kg": 0.535
+},
+{
+"campaña": "2018-19",
+"cultivo": "brocoli",
+"plaga": "pulgon ceroso",
+"incidencia": true,
+"pct_explotaciones_afectadas": 35.2,
+"merma_pct": 2.7,
+"precio_medio_eur_kg": 0.543
+},
+{
+"campaña": "2019-20",
+"cultivo": "brocoli",
+"plaga": "pulgon ceroso",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.53
+},
+{
+"campaña": "2020-21",
+"cultivo": "brocoli",
+"plaga": "pulgon ceroso",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.536
+},
+{
+"campaña": "2021-22",
+"cultivo": "brocoli",
+"plaga": "pulgon ceroso",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.554
+},
+{
+"campaña": "2022-23",
+"cultivo": "brocoli",
+"plaga": "pulgon ceroso",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.56
+},
+{
+"campaña": "2023-24",
+"cultivo": "brocoli",
+"plaga": "pulgon ceroso",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.565
+},
+{
+"campaña": "2024-25",
+"cultivo": "brocoli",
+"plaga": "pulgon ceroso",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.579
+},
+{
+"campaña": "2025-26",
+"cultivo": "brocoli",
+"plaga": "pulgon ceroso",
+"incidencia": true,
+"pct_explotaciones_afectadas": 11.9,
+"merma_pct": 3.2,
+"precio_medio_eur_kg": 0.589
+},
+{
+"campaña": "2016-17",
+"cultivo": "brocoli",
+"plaga": "amarilleo de floretes",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.514
+},
+{
+"campaña": "2017-18",
+"cultivo": "brocoli",
+"plaga": "amarilleo de floretes",
+"incidencia": true,
+"pct_explotaciones_afectadas": 25.0,
+"merma_pct": 5.6,
+"precio_medio_eur_kg": 0.548
+},
+{
+"campaña": "2018-19",
+"cultivo": "brocoli",
+"plaga": "amarilleo de floretes",
+"incidencia": true,
+"pct_explotaciones_afectadas": 13.0,
+"merma_pct": 10.1,
+"precio_medio_eur_kg": 0.552
+},
+{
+"campaña": "2019-20",
+"cultivo": "brocoli",
+"plaga": "amarilleo de floretes",
+"incidencia": true,
+"pct_explotaciones_afectadas": 36.6,
+"merma_pct": 7.0,
+"precio_medio_eur_kg": 0.555
+},
+{
+"campaña": "2020-21",
+"cultivo": "brocoli",
+"plaga": "amarilleo de floretes",
+"incidencia": true,
+"pct_explotaciones_afectadas": 26.5,
+"merma_pct": 5.3,
+"precio_medio_eur_kg": 0.552
+},
+{
+"campaña": "2021-22",
+"cultivo": "brocoli",
+"plaga": "amarilleo de floretes",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.54
+},
+{
+"campaña": "2022-23",
+"cultivo": "brocoli",
+"plaga": "amarilleo de floretes",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.559
+},
+{
+"campaña": "2023-24",
+"cultivo": "brocoli",
+"plaga": "amarilleo de floretes",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.574
+},
+{
+"campaña": "2024-25",
+"cultivo": "brocoli",
+"plaga": "amarilleo de floretes",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.576
+},
+{
+"campaña": "2025-26",
+"cultivo": "brocoli",
+"plaga": "amarilleo de floretes",
+"incidencia": true,
+"pct_explotaciones_afectadas": 14.6,
+"merma_pct": 9.9,
+"precio_medio_eur_kg": 0.606
+},
+{
+"campaña": "2016-17",
+"cultivo": "guisante",
+"plaga": "oidio",
+"incidencia": true,
+"pct_explotaciones_afectadas": 18.0,
+"merma_pct": 14.3,
+"precio_medio_eur_kg": 0.488
+},
+{
+"campaña": "2017-18",
+"cultivo": "guisante",
+"plaga": "oidio",
+"incidencia": true,
+"pct_explotaciones_afectadas": 33.4,
+"merma_pct": 9.6,
+"precio_medio_eur_kg": 0.476
+},
+{
+"campaña": "2018-19",
+"cultivo": "guisante",
+"plaga": "oidio",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.455
+},
+{
+"campaña": "2019-20",
+"cultivo": "guisante",
+"plaga": "oidio",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.467
+},
+{
+"campaña": "2020-21",
+"cultivo": "guisante",
+"plaga": "oidio",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.474
+},
+{
+"campaña": "2021-22",
+"cultivo": "guisante",
+"plaga": "oidio",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.486
+},
+{
+"campaña": "2022-23",
+"cultivo": "guisante",
+"plaga": "oidio",
+"incidencia": true,
+"pct_explotaciones_afectadas": 30.0,
+"merma_pct": 9.0,
+"precio_medio_eur_kg": 0.505
+},
+{
+"campaña": "2023-24",
+"cultivo": "guisante",
+"plaga": "oidio",
+"incidencia": true,
+"pct_explotaciones_afectadas": 15.2,
+"merma_pct": 12.3,
+"precio_medio_eur_kg": 0.529
+},
+{
+"campaña": "2024-25",
+"cultivo": "guisante",
+"plaga": "oidio",
+"incidencia": true,
+"pct_explotaciones_afectadas": 10.7,
+"merma_pct": 14.4,
+"precio_medio_eur_kg": 0.54
+},
+{
+"campaña": "2025-26",
+"cultivo": "guisante",
+"plaga": "oidio",
+"incidencia": true,
+"pct_explotaciones_afectadas": 30.8,
+"merma_pct": 12.8,
+"precio_medio_eur_kg": 0.527
+},
+{
+"campaña": "2016-17",
+"cultivo": "guisante",
+"plaga": "ascoquitosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.45
+},
+{
+"campaña": "2017-18",
+"cultivo": "guisante",
+"plaga": "ascoquitosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.45
+},
+{
+"campaña": "2018-19",
+"cultivo": "guisante",
+"plaga": "ascoquitosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 26.3,
+"merma_pct": 6.2,
+"precio_medio_eur_kg": 0.479
+},
+{
+"campaña": "2019-20",
+"cultivo": "guisante",
+"plaga": "ascoquitosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.474
+},
+{
+"campaña": "2020-21",
+"cultivo": "guisante",
+"plaga": "ascoquitosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.476
+},
+{
+"campaña": "2021-22",
+"cultivo": "guisante",
+"plaga": "ascoquitosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 25.4,
+"merma_pct": 9.1,
+"precio_medio_eur_kg": 0.505
+},
+{
+"campaña": "2022-23",
+"cultivo": "guisante",
+"plaga": "ascoquitosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 18.1,
+"merma_pct": 5.4,
+"precio_medio_eur_kg": 0.503
+},
+{
+"campaña": "2023-24",
+"cultivo": "guisante",
+"plaga": "ascoquitosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.496
+},
+{
+"campaña": "2024-25",
+"cultivo": "guisante",
+"plaga": "ascoquitosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.504
+},
+{
+"campaña": "2025-26",
+"cultivo": "guisante",
+"plaga": "ascoquitosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.511
+},
+{
+"campaña": "2016-17",
+"cultivo": "guisante",
+"plaga": "sitona",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.451
+},
+{
+"campaña": "2017-18",
+"cultivo": "guisante",
+"plaga": "sitona",
+"incidencia": true,
+"pct_explotaciones_afectadas": 11.6,
+"merma_pct": 5.6,
+"precio_medio_eur_kg": 0.468
+},
+{
+"campaña": "2018-19",
+"cultivo": "guisante",
+"plaga": "sitona",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.467
+},
+{
+"campaña": "2019-20",
+"cultivo": "guisante",
+"plaga": "sitona",
+"incidencia": true,
+"pct_explotaciones_afectadas": 15.3,
+"merma_pct": 2.4,
+"precio_medio_eur_kg": 0.465
+},
+{
+"campaña": "2020-21",
+"cultivo": "guisante",
+"plaga": "sitona",
+"incidencia": true,
+"pct_explotaciones_afectadas": 37.1,
+"merma_pct": 5.1,
+"precio_medio_eur_kg": 0.484
+},
+{
+"campaña": "2021-22",
+"cultivo": "guisante",
+"plaga": "sitona",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.488
+},
+{
+"campaña": "2022-23",
+"cultivo": "guisante",
+"plaga": "sitona",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.492
+},
+{
+"campaña": "2023-24",
+"cultivo": "guisante",
+"plaga": "sitona",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.494
+},
+{
+"campaña": "2024-25",
+"cultivo": "guisante",
+"plaga": "sitona",
+"incidencia": true,
+"pct_explotaciones_afectadas": 25.7,
+"merma_pct": 6.1,
+"precio_medio_eur_kg": 0.508
+},
+{
+"campaña": "2025-26",
+"cultivo": "guisante",
+"plaga": "sitona",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.512
+},
+{
+"campaña": "2016-17",
+"cultivo": "guisante",
+"plaga": "pulgon verde",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.46
+},
+{
+"campaña": "2017-18",
+"cultivo": "guisante",
+"plaga": "pulgon verde",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.451
+},
+{
+"campaña": "2018-19",
+"cultivo": "guisante",
+"plaga": "pulgon verde",
+"incidencia": true,
+"pct_explotaciones_afectadas": 32.4,
+"merma_pct": 7.4,
+"precio_medio_eur_kg": 0.484
+},
+{
+"campaña": "2019-20",
+"cultivo": "guisante",
+"plaga": "pulgon verde",
+"incidencia": true,
+"pct_explotaciones_afectadas": 26.3,
+"merma_pct": 5.0,
+"precio_medio_eur_kg": 0.482
+},
+{
+"campaña": "2020-21",
+"cultivo": "guisante",
+"plaga": "pulgon verde",
+"incidencia": true,
+"pct_explotaciones_afectadas": 11.5,
+"merma_pct": 8.1,
+"precio_medio_eur_kg": 0.491
+},
+{
+"campaña": "2021-22",
+"cultivo": "guisante",
+"plaga": "pulgon verde",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.476
+},
+{
+"campaña": "2022-23",
+"cultivo": "guisante",
+"plaga": "pulgon verde",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.491
+},
+{
+"campaña": "2023-24",
+"cultivo": "guisante",
+"plaga": "pulgon verde",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.484
+},
+{
+"campaña": "2024-25",
+"cultivo": "guisante",
+"plaga": "pulgon verde",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.489
+},
+{
+"campaña": "2025-26",
+"cultivo": "guisante",
+"plaga": "pulgon verde",
+"incidencia": true,
+"pct_explotaciones_afectadas": 13.5,
+"merma_pct": 3.7,
+"precio_medio_eur_kg": 0.511
+},
+{
+"campaña": "2016-17",
+"cultivo": "trigo",
+"plaga": "roya amarilla",
+"incidencia": true,
+"pct_explotaciones_afectadas": 18.8,
+"merma_pct": 12.9,
+"precio_medio_eur_kg": 0.233
+},
+{
+"campaña": "2017-18",
+"cultivo": "trigo",
+"plaga": "roya amarilla",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.222
+},
+{
+"campaña": "2018-19",
+"cultivo": "trigo",
+"plaga": "roya amarilla",
+"incidencia": true,
+"pct_explotaciones_afectadas": 40.0,
+"merma_pct": 23.4,
+"precio_medio_eur_kg": 0.245
+},
+{
+"campaña": "2019-20",
+"cultivo": "trigo",
+"plaga": "roya amarilla",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.225
+},
+{
+"campaña": "2020-21",
+"cultivo": "trigo",
+"plaga": "roya amarilla",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.226
+},
+{
+"campaña": "2021-22",
+"cultivo": "trigo",
+"plaga": "roya amarilla",
+"incidencia": true,
+"pct_explotaciones_afectadas": 28.0,
+"merma_pct": 17.4,
+"precio_medio_eur_kg": 0.255
+},
+{
+"campaña": "2022-23",
+"cultivo": "trigo",
+"plaga": "roya amarilla",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.228
+},
+{
+"campaña": "2023-24",
+"cultivo": "trigo",
+"plaga": "roya amarilla",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.237
+},
+{
+"campaña": "2024-25",
+"cultivo": "trigo",
+"plaga": "roya amarilla",
+"incidencia": true,
+"pct_explotaciones_afectadas": 29.2,
+"merma_pct": 9.1,
+"precio_medio_eur_kg": 0.245
+},
+{
+"campaña": "2025-26",
+"cultivo": "trigo",
+"plaga": "roya amarilla",
+"incidencia": true,
+"pct_explotaciones_afectadas": 21.9,
+"merma_pct": 14.7,
+"precio_medio_eur_kg": 0.26
+},
+{
+"campaña": "2016-17",
+"cultivo": "trigo",
+"plaga": "septoriosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 26.3,
+"merma_pct": 11.8,
+"precio_medio_eur_kg": 0.226
+},
+{
+"campaña": "2017-18",
+"cultivo": "trigo",
+"plaga": "septoriosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.221
+},
+{
+"campaña": "2018-19",
+"cultivo": "trigo",
+"plaga": "septoriosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 18.4,
+"merma_pct": 11.0,
+"precio_medio_eur_kg": 0.237
+},
+{
+"campaña": "2019-20",
+"cultivo": "trigo",
+"plaga": "septoriosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 19.2,
+"merma_pct": 5.9,
+"precio_medio_eur_kg": 0.231
+},
+{
+"campaña": "2020-21",
+"cultivo": "trigo",
+"plaga": "septoriosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.231
+},
+{
+"campaña": "2021-22",
+"cultivo": "trigo",
+"plaga": "septoriosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 18.1,
+"merma_pct": 4.0,
+"precio_medio_eur_kg": 0.234
+},
+{
+"campaña": "2022-23",
+"cultivo": "trigo",
+"plaga": "septoriosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.233
+},
+{
+"campaña": "2023-24",
+"cultivo": "trigo",
+"plaga": "septoriosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 39.7,
+"merma_pct": 12.5,
+"precio_medio_eur_kg": 0.249
+},
+{
+"campaña": "2024-25",
+"cultivo": "trigo",
+"plaga": "septoriosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.235
+},
+{
+"campaña": "2025-26",
+"cultivo": "trigo",
+"plaga": "septoriosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 38.1,
+"merma_pct": 11.1,
+"precio_medio_eur_kg": 0.259
+},
+{
+"campaña": "2016-17",
+"cultivo": "trigo",
+"plaga": "fusariosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.213
+},
+{
+"campaña": "2017-18",
+"cultivo": "trigo",
+"plaga": "fusariosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 16.8,
+"merma_pct": 13.3,
+"precio_medio_eur_kg": 0.231
+},
+{
+"campaña": "2018-19",
+"cultivo": "trigo",
+"plaga": "fusariosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.223
+},
+{
+"campaña": "2019-20",
+"cultivo": "trigo",
+"plaga": "fusariosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.223
+},
+{
+"campaña": "2020-21",
+"cultivo": "trigo",
+"plaga": "fusariosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 12.6,
+"merma_pct": 7.0,
+"precio_medio_eur_kg": 0.232
+},
+{
+"campaña": "2021-22",
+"cultivo": "trigo",
+"plaga": "fusariosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.227
+},
+{
+"campaña": "2022-23",
+"cultivo": "trigo",
+"plaga": "fusariosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 11.3,
+"merma_pct": 14.1,
+"precio_medio_eur_kg": 0.25
+},
+{
+"campaña": "2023-24",
+"cultivo": "trigo",
+"plaga": "fusariosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.233
+},
+{
+"campaña": "2024-25",
+"cultivo": "trigo",
+"plaga": "fusariosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.24
+},
+{
+"campaña": "2025-26",
+"cultivo": "trigo",
+"plaga": "fusariosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.236
+},
+{
+"campaña": "2016-17",
+"cultivo": "trigo",
+"plaga": "oidio",
+"incidencia": true,
+"pct_explotaciones_afectadas": 19.8,
+"merma_pct": 4.5,
+"precio_medio_eur_kg": 0.221
+},
+{
+"campaña": "2017-18",
+"cultivo": "trigo",
+"plaga": "oidio",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.22
+},
+{
+"campaña": "2018-19",
+"cultivo": "trigo",
+"plaga": "oidio",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.218
+},
+{
+"campaña": "2019-20",
+"cultivo": "trigo",
+"plaga": "oidio",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.228
+},
+{
+"campaña": "2020-21",
+"cultivo": "trigo",
+"plaga": "oidio",
+"incidencia": true,
+"pct_explotaciones_afectadas": 33.2,
+"merma_pct": 3.6,
+"precio_medio_eur_kg": 0.228
+},
+{
+"campaña": "2021-22",
+"cultivo": "trigo",
+"plaga": "oidio",
+"incidencia": true,
+"pct_explotaciones_afectadas": 15.8,
+"merma_pct": 2.6,
+"precio_medio_eur_kg": 0.229
+},
+{
+"campaña": "2022-23",
+"cultivo": "trigo",
+"plaga": "oidio",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.23
+},
+{
+"campaña": "2023-24",
+"cultivo": "trigo",
+"plaga": "oidio",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.232
+},
+{
+"campaña": "2024-25",
+"cultivo": "trigo",
+"plaga": "oidio",
+"incidencia": true,
+"pct_explotaciones_afectadas": 35.6,
+"merma_pct": 2.5,
+"precio_medio_eur_kg": 0.242
+},
+{
+"campaña": "2025-26",
+"cultivo": "trigo",
+"plaga": "oidio",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.241
+},
+{
+"campaña": "2016-17",
+"cultivo": "trigo",
+"plaga": "pulgon",
+"incidencia": true,
+"pct_explotaciones_afectadas": 15.1,
+"merma_pct": 4.2,
+"precio_medio_eur_kg": 0.219
+},
+{
+"campaña": "2017-18",
+"cultivo": "trigo",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.222
+},
+{
+"campaña": "2018-19",
+"cultivo": "trigo",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.222
+},
+{
+"campaña": "2019-20",
+"cultivo": "trigo",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.227
+},
+{
+"campaña": "2020-21",
+"cultivo": "trigo",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.228
+},
+{
+"campaña": "2021-22",
+"cultivo": "trigo",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.228
+},
+{
+"campaña": "2022-23",
+"cultivo": "trigo",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.234
+},
+{
+"campaña": "2023-24",
+"cultivo": "trigo",
+"plaga": "pulgon",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.237
+},
+{
+"campaña": "2024-25",
+"cultivo": "trigo",
+"plaga": "pulgon",
+"incidencia": true,
+"pct_explotaciones_afectadas": 37.9,
+"merma_pct": 3.3,
+"precio_medio_eur_kg": 0.242
+},
+{
+"campaña": "2025-26",
+"cultivo": "trigo",
+"plaga": "pulgon",
+"incidencia": true,
+"pct_explotaciones_afectadas": 37.8,
+"merma_pct": 5.4,
+"precio_medio_eur_kg": 0.248
+},
+{
+"campaña": "2016-17",
+"cultivo": "cebada",
+"plaga": "rincosporiosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 35.3,
+"merma_pct": 11.9,
+"precio_medio_eur_kg": 0.201
+},
+{
+"campaña": "2017-18",
+"cultivo": "cebada",
+"plaga": "rincosporiosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 39.2,
+"merma_pct": 7.1,
+"precio_medio_eur_kg": 0.198
+},
+{
+"campaña": "2018-19",
+"cultivo": "cebada",
+"plaga": "rincosporiosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 33.6,
+"merma_pct": 7.1,
+"precio_medio_eur_kg": 0.198
+},
+{
+"campaña": "2019-20",
+"cultivo": "cebada",
+"plaga": "rincosporiosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.193
+},
+{
+"campaña": "2020-21",
+"cultivo": "cebada",
+"plaga": "rincosporiosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.201
+},
+{
+"campaña": "2021-22",
+"cultivo": "cebada",
+"plaga": "rincosporiosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 36.1,
+"merma_pct": 4.6,
+"precio_medio_eur_kg": 0.204
+},
+{
+"campaña": "2022-23",
+"cultivo": "cebada",
+"plaga": "rincosporiosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.203
+},
+{
+"campaña": "2023-24",
+"cultivo": "cebada",
+"plaga": "rincosporiosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 37.1,
+"merma_pct": 10.9,
+"precio_medio_eur_kg": 0.214
+},
+{
+"campaña": "2024-25",
+"cultivo": "cebada",
+"plaga": "rincosporiosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.204
+},
+{
+"campaña": "2025-26",
+"cultivo": "cebada",
+"plaga": "rincosporiosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.21
+},
+{
+"campaña": "2016-17",
+"cultivo": "cebada",
+"plaga": "helmintosporiosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 27.0,
+"merma_pct": 4.8,
+"precio_medio_eur_kg": 0.189
+},
+{
+"campaña": "2017-18",
+"cultivo": "cebada",
+"plaga": "helmintosporiosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.189
+},
+{
+"campaña": "2018-19",
+"cultivo": "cebada",
+"plaga": "helmintosporiosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.192
+},
+{
+"campaña": "2019-20",
+"cultivo": "cebada",
+"plaga": "helmintosporiosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 34.2,
+"merma_pct": 4.9,
+"precio_medio_eur_kg": 0.203
+},
+{
+"campaña": "2020-21",
+"cultivo": "cebada",
+"plaga": "helmintosporiosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 34.2,
+"merma_pct": 4.3,
+"precio_medio_eur_kg": 0.199
+},
+{
+"campaña": "2021-22",
+"cultivo": "cebada",
+"plaga": "helmintosporiosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 11.8,
+"merma_pct": 10.6,
+"precio_medio_eur_kg": 0.213
+},
+{
+"campaña": "2022-23",
+"cultivo": "cebada",
+"plaga": "helmintosporiosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 17.8,
+"merma_pct": 12.4,
+"precio_medio_eur_kg": 0.212
+},
+{
+"campaña": "2023-24",
+"cultivo": "cebada",
+"plaga": "helmintosporiosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.203
+},
+{
+"campaña": "2024-25",
+"cultivo": "cebada",
+"plaga": "helmintosporiosis",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.21
+},
+{
+"campaña": "2025-26",
+"cultivo": "cebada",
+"plaga": "helmintosporiosis",
+"incidencia": true,
+"pct_explotaciones_afectadas": 14.7,
+"merma_pct": 11.0,
+"precio_medio_eur_kg": 0.224
+},
+{
+"campaña": "2016-17",
+"cultivo": "cebada",
+"plaga": "roya parda",
+"incidencia": true,
+"pct_explotaciones_afectadas": 36.8,
+"merma_pct": 3.3,
+"precio_medio_eur_kg": 0.191
+},
+{
+"campaña": "2017-18",
+"cultivo": "cebada",
+"plaga": "roya parda",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.191
+},
+{
+"campaña": "2018-19",
+"cultivo": "cebada",
+"plaga": "roya parda",
+"incidencia": true,
+"pct_explotaciones_afectadas": 14.4,
+"merma_pct": 9.4,
+"precio_medio_eur_kg": 0.205
+},
+{
+"campaña": "2019-20",
+"cultivo": "cebada",
+"plaga": "roya parda",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.192
+},
+{
+"campaña": "2020-21",
+"cultivo": "cebada",
+"plaga": "roya parda",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.201
+},
+{
+"campaña": "2021-22",
+"cultivo": "cebada",
+"plaga": "roya parda",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.201
+},
+{
+"campaña": "2022-23",
+"cultivo": "cebada",
+"plaga": "roya parda",
+"incidencia": true,
+"pct_explotaciones_afectadas": 16.8,
+"merma_pct": 6.4,
+"precio_medio_eur_kg": 0.212
+},
+{
+"campaña": "2023-24",
+"cultivo": "cebada",
+"plaga": "roya parda",
+"incidencia": true,
+"pct_explotaciones_afectadas": 37.8,
+"merma_pct": 6.8,
+"precio_medio_eur_kg": 0.214
+},
+{
+"campaña": "2024-25",
+"cultivo": "cebada",
+"plaga": "roya parda",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.207
+},
+{
+"campaña": "2025-26",
+"cultivo": "cebada",
+"plaga": "roya parda",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.206
+},
+{
+"campaña": "2016-17",
+"cultivo": "cebada",
+"plaga": "enanismo amarillo",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.187
+},
+{
+"campaña": "2017-18",
+"cultivo": "cebada",
+"plaga": "enanismo amarillo",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.192
+},
+{
+"campaña": "2018-19",
+"cultivo": "cebada",
+"plaga": "enanismo amarillo",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.196
+},
+{
+"campaña": "2019-20",
+"cultivo": "cebada",
+"plaga": "enanismo amarillo",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.199
+},
+{
+"campaña": "2020-21",
+"cultivo": "cebada",
+"plaga": "enanismo amarillo",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.199
+},
+{
+"campaña": "2021-22",
+"cultivo": "cebada",
+"plaga": "enanismo amarillo",
+"incidencia": true,
+"pct_explotaciones_afectadas": 36.2,
+"merma_pct": 9.3,
+"precio_medio_eur_kg": 0.205
+},
+{
+"campaña": "2022-23",
+"cultivo": "cebada",
+"plaga": "enanismo amarillo",
+"incidencia": true,
+"pct_explotaciones_afectadas": 23.7,
+"merma_pct": 12.4,
+"precio_medio_eur_kg": 0.218
+},
+{
+"campaña": "2023-24",
+"cultivo": "cebada",
+"plaga": "enanismo amarillo",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.206
+},
+{
+"campaña": "2024-25",
+"cultivo": "cebada",
+"plaga": "enanismo amarillo",
+"incidencia": true,
+"pct_explotaciones_afectadas": 15.0,
+"merma_pct": 7.6,
+"precio_medio_eur_kg": 0.211
+},
+{
+"campaña": "2025-26",
+"cultivo": "cebada",
+"plaga": "enanismo amarillo",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.212
+},
+{
+"campaña": "2016-17",
+"cultivo": "maiz",
+"plaga": "taladro",
+"incidencia": true,
+"pct_explotaciones_afectadas": 25.8,
+"merma_pct": 6.0,
+"precio_medio_eur_kg": 0.202
+},
+{
+"campaña": "2017-18",
+"cultivo": "maiz",
+"plaga": "taladro",
+"incidencia": true,
+"pct_explotaciones_afectadas": 30.7,
+"merma_pct": 7.2,
+"precio_medio_eur_kg": 0.205
+},
+{
+"campaña": "2018-19",
+"cultivo": "maiz",
+"plaga": "taladro",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.201
+},
+{
+"campaña": "2019-20",
+"cultivo": "maiz",
+"plaga": "taladro",
+"incidencia": true,
+"pct_explotaciones_afectadas": 38.3,
+"merma_pct": 9.6,
+"precio_medio_eur_kg": 0.212
+},
+{
+"campaña": "2020-21",
+"cultivo": "maiz",
+"plaga": "taladro",
+"incidencia": true,
+"pct_explotaciones_afectadas": 18.2,
+"merma_pct": 7.1,
+"precio_medio_eur_kg": 0.213
+},
+{
+"campaña": "2021-22",
+"cultivo": "maiz",
+"plaga": "taladro",
+"incidencia": true,
+"pct_explotaciones_afectadas": 34.6,
+"merma_pct": 8.9,
+"precio_medio_eur_kg": 0.217
+},
+{
+"campaña": "2022-23",
+"cultivo": "maiz",
+"plaga": "taladro",
+"incidencia": true,
+"pct_explotaciones_afectadas": 23.0,
+"merma_pct": 11.2,
+"precio_medio_eur_kg": 0.225
+},
+{
+"campaña": "2023-24",
+"cultivo": "maiz",
+"plaga": "taladro",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.215
+},
+{
+"campaña": "2024-25",
+"cultivo": "maiz",
+"plaga": "taladro",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.218
+},
+{
+"campaña": "2025-26",
+"cultivo": "maiz",
+"plaga": "taladro",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.217
+},
+{
+"campaña": "2016-17",
+"cultivo": "maiz",
+"plaga": "fusarium en mazorca",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.199
+},
+{
+"campaña": "2017-18",
+"cultivo": "maiz",
+"plaga": "fusarium en mazorca",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.198
+},
+{
+"campaña": "2018-19",
+"cultivo": "maiz",
+"plaga": "fusarium en mazorca",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.205
+},
+{
+"campaña": "2019-20",
+"cultivo": "maiz",
+"plaga": "fusarium en mazorca",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.204
+},
+{
+"campaña": "2020-21",
+"cultivo": "maiz",
+"plaga": "fusarium en mazorca",
+"incidencia": true,
+"pct_explotaciones_afectadas": 27.8,
+"merma_pct": 7.3,
+"precio_medio_eur_kg": 0.218
+},
+{
+"campaña": "2021-22",
+"cultivo": "maiz",
+"plaga": "fusarium en mazorca",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.211
+},
+{
+"campaña": "2022-23",
+"cultivo": "maiz",
+"plaga": "fusarium en mazorca",
+"incidencia": true,
+"pct_explotaciones_afectadas": 10.1,
+"merma_pct": 10.3,
+"precio_medio_eur_kg": 0.227
+},
+{
+"campaña": "2023-24",
+"cultivo": "maiz",
+"plaga": "fusarium en mazorca",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.212
+},
+{
+"campaña": "2024-25",
+"cultivo": "maiz",
+"plaga": "fusarium en mazorca",
+"incidencia": true,
+"pct_explotaciones_afectadas": 13.8,
+"merma_pct": 10.8,
+"precio_medio_eur_kg": 0.229
+},
+{
+"campaña": "2025-26",
+"cultivo": "maiz",
+"plaga": "fusarium en mazorca",
+"incidencia": true,
+"pct_explotaciones_afectadas": 19.4,
+"merma_pct": 6.1,
+"precio_medio_eur_kg": 0.228
+},
+{
+"campaña": "2016-17",
+"cultivo": "maiz",
+"plaga": "arana roja",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.199
+},
+{
+"campaña": "2017-18",
+"cultivo": "maiz",
+"plaga": "arana roja",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.201
+},
+{
+"campaña": "2018-19",
+"cultivo": "maiz",
+"plaga": "arana roja",
+"incidencia": true,
+"pct_explotaciones_afectadas": 22.6,
+"merma_pct": 4.1,
+"precio_medio_eur_kg": 0.205
+},
+{
+"campaña": "2019-20",
+"cultivo": "maiz",
+"plaga": "arana roja",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.203
+},
+{
+"campaña": "2020-21",
+"cultivo": "maiz",
+"plaga": "arana roja",
+"incidencia": true,
+"pct_explotaciones_afectadas": 32.4,
+"merma_pct": 3.8,
+"precio_medio_eur_kg": 0.208
+},
+{
+"campaña": "2021-22",
+"cultivo": "maiz",
+"plaga": "arana roja",
+"incidencia": true,
+"pct_explotaciones_afectadas": 10.6,
+"merma_pct": 5.5,
+"precio_medio_eur_kg": 0.217
+},
+{
+"campaña": "2022-23",
+"cultivo": "maiz",
+"plaga": "arana roja",
+"incidencia": true,
+"pct_explotaciones_afectadas": 12.3,
+"merma_pct": 7.4,
+"precio_medio_eur_kg": 0.224
+},
+{
+"campaña": "2023-24",
+"cultivo": "maiz",
+"plaga": "arana roja",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.219
+},
+{
+"campaña": "2024-25",
+"cultivo": "maiz",
+"plaga": "arana roja",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.22
+},
+{
+"campaña": "2025-26",
+"cultivo": "maiz",
+"plaga": "arana roja",
+"incidencia": true,
+"pct_explotaciones_afectadas": 31.1,
+"merma_pct": 8.6,
+"precio_medio_eur_kg": 0.225
+},
+{
+"campaña": "2016-17",
+"cultivo": "maiz",
+"plaga": "gusano de alambre",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.194
+},
+{
+"campaña": "2017-18",
+"cultivo": "maiz",
+"plaga": "gusano de alambre",
+"incidencia": true,
+"pct_explotaciones_afectadas": 27.7,
+"merma_pct": 5.2,
+"precio_medio_eur_kg": 0.204
+},
+{
+"campaña": "2018-19",
+"cultivo": "maiz",
+"plaga": "gusano de alambre",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.204
+},
+{
+"campaña": "2019-20",
+"cultivo": "maiz",
+"plaga": "gusano de alambre",
+"incidencia": true,
+"pct_explotaciones_afectadas": 18.4,
+"merma_pct": 3.2,
+"precio_medio_eur_kg": 0.205
+},
+{
+"campaña": "2020-21",
+"cultivo": "maiz",
+"plaga": "gusano de alambre",
+"incidencia": true,
+"pct_explotaciones_afectadas": 35.5,
+"merma_pct": 3.2,
+"precio_medio_eur_kg": 0.211
+},
+{
+"campaña": "2021-22",
+"cultivo": "maiz",
+"plaga": "gusano de alambre",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.212
+},
+{
+"campaña": "2022-23",
+"cultivo": "maiz",
+"plaga": "gusano de alambre",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.216
+},
+{
+"campaña": "2023-24",
+"cultivo": "maiz",
+"plaga": "gusano de alambre",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.216
+},
+{
+"campaña": "2024-25",
+"cultivo": "maiz",
+"plaga": "gusano de alambre",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.216
+},
+{
+"campaña": "2025-26",
+"cultivo": "maiz",
+"plaga": "gusano de alambre",
+"incidencia": true,
+"pct_explotaciones_afectadas": 12.4,
+"merma_pct": 6.8,
+"precio_medio_eur_kg": 0.227
+},
+{
+"campaña": "2016-17",
+"cultivo": "maiz",
+"plaga": "carbon comun",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.198
+},
+{
+"campaña": "2017-18",
+"cultivo": "maiz",
+"plaga": "carbon comun",
+"incidencia": true,
+"pct_explotaciones_afectadas": 31.4,
+"merma_pct": 1.2,
+"precio_medio_eur_kg": 0.198
+},
+{
+"campaña": "2018-19",
+"cultivo": "maiz",
+"plaga": "carbon comun",
+"incidencia": true,
+"pct_explotaciones_afectadas": 31.2,
+"merma_pct": 4.8,
+"precio_medio_eur_kg": 0.203
+},
+{
+"campaña": "2019-20",
+"cultivo": "maiz",
+"plaga": "carbon comun",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.207
+},
+{
+"campaña": "2020-21",
+"cultivo": "maiz",
+"plaga": "carbon comun",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.204
+},
+{
+"campaña": "2021-22",
+"cultivo": "maiz",
+"plaga": "carbon comun",
+"incidencia": true,
+"pct_explotaciones_afectadas": 37.7,
+"merma_pct": 3.5,
+"precio_medio_eur_kg": 0.217
+},
+{
+"campaña": "2022-23",
+"cultivo": "maiz",
+"plaga": "carbon comun",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.211
+},
+{
+"campaña": "2023-24",
+"cultivo": "maiz",
+"plaga": "carbon comun",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.215
+},
+{
+"campaña": "2024-25",
+"cultivo": "maiz",
+"plaga": "carbon comun",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.218
+},
+{
+"campaña": "2025-26",
+"cultivo": "maiz",
+"plaga": "carbon comun",
+"incidencia": false,
+"pct_explotaciones_afectadas": 0.0,
+"merma_pct": 0.0,
+"precio_medio_eur_kg": 0.224
+}
+]
+}

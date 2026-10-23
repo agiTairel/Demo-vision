@@ -15,6 +15,7 @@ import html
 import json
 import os
 import time
+import uuid
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
@@ -23,6 +24,7 @@ import streamlit.components.v1 as components
 
 from calidad.analizador import ErrorAnalisis, config, huella, orden_proveedores, preparar_imagen
 from calidad.estilo import CSS
+from calidad.documentacion import archivos_para_informe
 from calidad.leads import email_valido, guardar_lead
 from calidad.prevision import html_prevision
 from calidad.sanidad import (
@@ -274,8 +276,10 @@ if PASO == "bienvenida":
         elif not acepto:
             st.error("Necesitamos tu consentimiento para poder contactarte.")
         else:
-            guardar_lead(email, nombre, empresa or "", acepto, producto="Demo campo + previsión", categoria="")
-            st.session_state["usuario"] = {"email": email.strip(), "nombre": nombre.strip(), "empresa": (empresa or "").strip()}
+            id_lead = uuid.uuid4().hex   # identifica al visitante en el Sheet (links de su ficha, dossier e informe de costes)
+            guardar_lead(email, nombre, empresa or "", acepto, producto="Demo campo + previsión", categoria="", id_lead=id_lead)
+            st.session_state["usuario"] = {"email": email.strip(), "nombre": nombre.strip(), "empresa": (empresa or "").strip(),
+                                           "id_lead": id_lead}
             ir("campos")
     pie()
 
@@ -492,7 +496,20 @@ elif PASO == "prevision":
         )
     st.markdown('<div class="resumen-campos">' + "".join(filas) + "</div>", unsafe_allow_html=True)
 
-    components.html(html_prevision(campos, EMAIL_CONTACTO, WEB_CONTACTO), height=2600, scrolling=True)
+    # Documentación (Irati): la ficha de incidencia y el dossier resumen se preparan aquí y viajan con la página;
+    # al pulsar «Descargar mi informe» la página los guarda en Drive junto con el informe de costes
+    # y deja sus links en la fila del visitante del Sheet. A las 8:00 del día siguiente se envía el correo.
+    usuario = st.session_state.get("usuario") or {}
+    subida = None
+    if usuario.get("id_lead") and config("LEADS_WEBHOOK_URL", ""):
+        try:
+            subida = {"url": config("LEADS_WEBHOOK_URL", ""), "id_lead": usuario["id_lead"],
+                      "archivos": archivos_para_informe(usuario, campos, usuario["id_lead"], st.session_state)}
+        except Exception as e:  # noqa: BLE001  (la previsión se muestra igual aunque falle la documentación)
+            print("ERROR documentación:", type(e).__name__, e, flush=True)
+            subida = {"url": config("LEADS_WEBHOOK_URL", ""), "id_lead": usuario["id_lead"], "archivos": []}
+
+    components.html(html_prevision(campos, EMAIL_CONTACTO, WEB_CONTACTO, subida=subida), height=2600, scrolling=True)
 
 if config("MOSTRAR_DIAGNOSTICO", "0") == "1":
     with st.expander("Diagnóstico (solo equipo)"):

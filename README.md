@@ -109,3 +109,25 @@ El formulario del final de la app guarda cada contacto (fecha, correo, nombre, e
 Si la hoja no responde, el contacto no se pierde: aparece en el registro de la app (Manage app) en una línea que empieza por `LEAD_PENDIENTE`.
 
 Para la automatización: Archivo > Descargar > CSV, o leer la hoja directamente con su conector de Google Sheets. No publiquéis la hoja en la web, porque contiene datos personales.
+
+## Documentación y correo del día siguiente (Irati)
+
+La incidencia del agricultor son sus campos (cuántos, qué cultivo y en qué comarca) y, si sube foto, su análisis. Sin foto no hay análisis: se pasa directamente a la previsión.
+
+Al pulsar **«Descargar mi informe»** en la previsión se generan y guardan los tres documentos del visitante, cada uno en su columna al final de la hoja de leads:
+
+| Columna | Documento | Lo genera |
+|---|---|---|
+| `link_ficha_incidencia` | Ficha de incidencia con identificador `IN-AAAAMMDD-XXXXX`: una sección por campo (cultivo, comarca, foto, diagnóstico, recomendaciones, antecedentes) y trazabilidad (huella SHA-256 de cada foto) | `calidad/documentacion.py` + `calidad/informes_pdf.py` |
+| `link_dossier_resumen` | Dossier resumen: cosecha en riesgo, €/ha en juego, histórico de la plaga, días de ventaja y coste del trabajo manual evitado | ídem |
+| `link_informe_costes` | La previsión de campaña en PDF, con el escenario que tenía puesto | la propia página (`prevision/index.html`) |
+
+Los archivos se guardan en una carpeta privada de Google Drive. Cada día a las 8:00 (hora de Madrid) el Apps Script recorre las filas en `pendiente` de días anteriores, envía el correo comercial con los PDF adjuntos desde info@taireldata.com y cambia el estado a `enviado dd/mm/aaaa hh:mm`. Quien no pulsó el botón queda como `sin informe` (configurable con `ENVIAR_SIN_ARCHIVOS`).
+
+Cómo funciona por dentro:
+- Al registrarse, la app crea un `id_lead` aleatorio y lo envía con el contacto; el Apps Script lo relaciona con su fila (sin columnas extra).
+- En la previsión, la app genera la ficha y el dossier (solo si cambian los campos o las fotos) y se los pasa a la página en `window.DEMO_TAIREL.subida`.
+- El botón abre la impresión como siempre y, a la vez, sube los tres PDF al Apps Script con el `id_lead`. Si se pulsa otra vez, los archivos se sustituyen.
+- El histórico de plagas (`calidad/datos/historico_plagas.json`) es sintético, marcado como demo.
+
+Instalación del Apps Script: ver las instrucciones al principio de `google_sheets_leads.gs` (pegar, `probar`, `instalarEnvioDiario` y nueva versión de la implementación; la URL no cambia). `vistaPrevia` te envía el correo de la última fila con archivos sin cambiar su estado.

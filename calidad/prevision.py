@@ -53,7 +53,10 @@ def campos_para_prevision(campos: list[dict]) -> list[dict]:
     return salida
 
 
-def html_prevision(campos: list[dict], email: str = "", web: str = "") -> str:
-    datos = json.dumps({"campos": campos_para_prevision(campos), "cta": {"email": email, "web": web}},
+def html_prevision(campos: list[dict], email: str = "", web: str = "", subida: dict | None = None) -> str:
+    """subida = {"url": <Apps Script>, "id_lead": ..., "archivos": [ficha, dossier]}: al pulsar «Descargar mi informe»
+    la previsión sube esos archivos y el PDF de costes a Drive para enviarlos al día siguiente."""
+    datos = json.dumps({"campos": campos_para_prevision(campos), "cta": {"email": email, "web": web},
+                        "subida": subida if subida and subida.get("url") and subida.get("id_lead") else None},
                        ensure_ascii=False).replace("</", "<\\/")
     return _plantilla().replace(MARCA_INYECCION, f"<script>window.DEMO_TAIREL = {datos};</script>\n" + MARCA_INYECCION, 1)

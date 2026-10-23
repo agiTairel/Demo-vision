@@ -748,6 +748,101 @@ const NEGOCIO = {
   congelado: { nombre: 'Congelado', linea: 'línea de congelado' },
   cereal: { nombre: 'Cereal', linea: 'línea de cereal' },
 };
+// ---- Demo Tairel: «Descargar mi informe» guarda también los documentos del visitante para enviárselos por correo ----
+// La app pasa window.DEMO_TAIREL.subida = {url: Apps Script, id_lead, archivos: [ficha de incidencia, dossier resumen]}.
+// Al pulsar el botón se suben esos dos y el informe de costes (esta página en PDF, con el mismo diseño que la
+// impresión, con html2canvas + jsPDF); el Apps Script los guarda en Drive y deja cada link en su columna del Sheet.
+let GUARDANDO_INFORMES = false;
+function cargarScript(src, listo) {
+  return new Promise((ok, mal) => {
+    if (listo()) return ok();
+    const s = document.createElement('script');
+    s.src = src; s.onload = () => ok(); s.onerror = () => mal(new Error('No se pudo cargar ' + src));
+    document.head.appendChild(s);
+  });
+}
+function cssImpresion() {
+  let css = '';
+  for (const hoja of Array.from(document.styleSheets)) {
+    let reglas; try { reglas = hoja.cssRules; } catch (e) { continue; }
+    for (const r of Array.from(reglas || [])) {
+      if (r.media && Array.from(r.media).indexOf('print') >= 0) {
+        for (const x of Array.from(r.cssRules)) if (!/^@page/.test(x.cssText)) css += x.cssText + '\n';
+      }
+    }
+  }
+  return css;
+}
+// Esta página en PDF (A4 apaisado) con el diseño de impresión, cortando las páginas entre secciones.
+async function pdfDeLaPrevision() {
+  await cargarScript('https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js', () => window.html2canvas);
+  await cargarScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js', () => window.jspdf);
+  const W = 1240, ESCALA = 1.5, css = cssImpresion();
+  let cortes = [];
+  const lienzo = await window.html2canvas(document.body, {
+    scale: ESCALA, backgroundColor: '#ffffff', useCORS: true, logging: false, windowWidth: W, width: W, x: 0, y: 0, scrollX: 0, scrollY: 0,
+    onclone: (doc) => {
+      const st = doc.createElement('style');
+      st.textContent = css + '\nbody{width:' + W + 'px !important;margin:0 !important;background:#fff !important}';
+      doc.head.appendChild(st);
+      const arriba = doc.body.getBoundingClientRect().top;
+      doc.querySelectorAll('header.cabecera, section, .alerta, .comp, details, #pie').forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (r.height > 0) cortes.push(r.top - arriba);
+      });
+    }
+  });
+  const pdf = new window.jspdf.jsPDF({ unit: 'mm', format: 'a4', orientation: 'landscape' });
+  const M = 10, anchoMm = 297 - 2 * M, altoMm = 210 - 2 * M;
+  const altoPagina = W * altoMm / anchoMm;                       // en px CSS
+  const total = lienzo.height / ESCALA;
+  cortes = cortes.filter((c) => c > 0).sort((a, b) => a - b);
+  let y = 0, primera = true;
+  while (y < total - 4) {
+    const limite = y + altoPagina;
+    const buenos = cortes.filter((c) => c > y + altoPagina * 0.45 && c <= limite);
+    const fin = limite >= total ? total : (buenos.length ? buenos[buenos.length - 1] : limite);
+    const trozo = document.createElement('canvas');
+    trozo.width = lienzo.width; trozo.height = Math.ceil((fin - y) * ESCALA);
+    const ctx = trozo.getContext('2d');
+    ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, trozo.width, trozo.height);
+    ctx.drawImage(lienzo, 0, Math.floor(y * ESCALA), lienzo.width, trozo.height, 0, 0, trozo.width, trozo.height);
+    if (!primera) pdf.addPage();
+    pdf.addImage(trozo.toDataURL('image/jpeg', 0.85), 'JPEG', M, M, anchoMm, (fin - y) * anchoMm / W);
+    primera = false; y = fin;
+  }
+  pdf.setProperties({ title: 'Previsión de campaña', author: 'Tairel Data', creator: 'Demo IA para el campo' });
+  return pdf.output('datauristring');
+}
+async function enviarArchivos(sub, archivos) {
+  const cuerpo = JSON.stringify({ accion: 'archivos', id_lead: sub.id_lead, archivos: archivos });
+  try {
+    const r = await fetch(sub.url, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: cuerpo });
+    const j = await r.json().catch(() => ({}));
+    if (j.ok === false) console.warn('Documentos no guardados:', j.error);
+  } catch (e) {
+    // Si el navegador no deja leer la respuesta (CORS), se envía igualmente sin leerla.
+    await fetch(sub.url, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: cuerpo });
+  }
+}
+async function guardarInformes() {
+  const sub = window.DEMO_TAIREL && window.DEMO_TAIREL.subida;
+  if (!sub || !sub.url || !sub.id_lead || GUARDANDO_INFORMES) return;
+  GUARDANDO_INFORMES = true;
+  try {
+    // 1) Ficha de incidencia y dossier resumen (ya generados por la app)
+    if (sub.archivos && sub.archivos.length) await enviarArchivos(sub, sub.archivos).catch((e) => console.warn(e));
+    // 2) Informe de costes: esta previsión en PDF, con el escenario que el visitante tiene puesto
+    const nombre = 'Informe_costes_' + new Date().toISOString().slice(0, 10) + '_' + sub.id_lead.slice(0, 5).toUpperCase() + '.pdf';
+    const pdf = await pdfDeLaPrevision();
+    await enviarArchivos(sub, [{ tipo: 'costes', nombre: nombre, base64: pdf.split(',')[1] }]);
+  } catch (e) {
+    console.warn('No se pudo guardar el informe de costes:', e);
+  } finally {
+    GUARDANDO_INFORMES = false;
+  }
+}
+
 // ---- Demo Tairel: campos y fotos del visitante (los inyecta la app como window.DEMO_TAIREL) ----
 const DEMO = (window.DEMO_TAIREL && Array.isArray(window.DEMO_TAIREL.campos) && window.DEMO_TAIREL.campos.length) ? window.DEMO_TAIREL : null;
 if (DEMO) document.documentElement.classList.add('embebido');
@@ -1872,7 +1967,7 @@ document.addEventListener('click', (ev) => {
   else if (t.dataset.zona) { S.zona = t.dataset.zona; pintarMapa(); }
   else if (t.id === 'btn-base') { S.pal = Object.assign({}, Motor.PALANCAS_CERO); sincronizarSimulador(); recalcular(); }
   else if (t.id === 'btn-reset') reiniciar();
-  else if (t.id === 'btn-pdf' || t.dataset.informe) window.print();
+  else if (t.id === 'btn-pdf' || t.dataset.informe) { window.print(); guardarInformes(); }
   else if (t.dataset.borrar) {
     GUARDADOS = GUARDADOS.filter((g) => g.id !== t.dataset.borrar); guardarLista();
     COSECHAS = COSECHAS.filter((c) => c.id !== t.dataset.borrar); guardarCosechas();
