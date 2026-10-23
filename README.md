@@ -6,6 +6,9 @@ Demo web para móvil en cuatro pasos:
 2. Tus campos: de 1 a 4 campos, cada uno con su cultivo (lechuga, canónigos, espinaca, brócoli, guisante, trigo, cebada o maíz) y su comarca agraria de Navarra.
 3. Fotos: como agricultor, el visitante envía una foto de cada campo (predeterminada o propia) y la IA detecta plagas y enfermedades, la superficie afectada y la pérdida de cosecha estimada.
 4. Previsión de campaña: la demo de previsión (carpeta `prevision/`) con el escenario «Según tus fotos», los campos en el mapa de Navarra y avisos por campo.
+   - «Según tus fotos» es un escenario más: aparece en «¿Y si…?», en el sello y en la comparativa «¿Qué escenario pesa más?».
+   - **Cosechas:** el visitante puede guardar el diagnóstico de sus fotos con nombre y fecha («Guardar cosecha»). Se recuerda en ese navegador y aparece como escenario para compararla en otra visita.
+   - **¿De dónde salen estos números?** está siempre visible: fichas de cada fuente real (Meteo Navarra, OMIE, OMIP, Ministerio, INE), la de «Tus fotos» y la de lo simulado.
 
 ## Estructura (lo nuevo)
 
