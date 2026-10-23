@@ -228,7 +228,21 @@ class ErrorAnalisis(Exception):
     pass
 
 
-def _analizar_anthropic(jpeg: bytes, producto: str) -> tuple[dict, str]:
+@dataclass
+class Tarea:
+    """Qué se le pide al modelo: instrucciones, petición y esquema de respuesta."""
+    sistema: str
+    peticion: str
+    esquema: dict
+    nombre: str = "informe_calidad"
+    descripcion: str = "Registra el informe de calidad de la imagen analizada."
+
+
+def _tarea_calidad(producto: str) -> Tarea:
+    return Tarea(PROMPT_SISTEMA, construir_prompt_usuario(producto), ESQUEMA)
+
+
+def _analizar_anthropic(jpeg: bytes, tarea: Tarea) -> tuple[dict, str]:
     import anthropic
 
     clave = config("ANTHROPIC_API_KEY")
@@ -239,15 +253,9 @@ def _analizar_anthropic(jpeg: bytes, producto: str) -> tuple[dict, str]:
     resp = cliente.messages.create(
         model=modelo,
         max_tokens=2000,
-        system=PROMPT_SISTEMA,
-        tools=[
-            {
-                "name": "informe_calidad",
-                "description": "Registra el informe de calidad de la imagen analizada.",
-                "input_schema": ESQUEMA,
-            }
-        ],
-        tool_choice={"type": "tool", "name": "informe_calidad"},
+        system=tarea.sistema,
+        tools=[{"name": tarea.nombre, "description": tarea.descripcion, "input_schema": tarea.esquema}],
+        tool_choice={"type": "tool", "name": tarea.nombre},
         messages=[
             {
                 "role": "user",
@@ -260,7 +268,7 @@ def _analizar_anthropic(jpeg: bytes, producto: str) -> tuple[dict, str]:
                             "data": base64.b64encode(jpeg).decode(),
                         },
                     },
-                    {"type": "text", "text": construir_prompt_usuario(producto)},
+                    {"type": "text", "text": tarea.peticion},
                 ],
             }
         ],
@@ -271,7 +279,7 @@ def _analizar_anthropic(jpeg: bytes, producto: str) -> tuple[dict, str]:
     raise ErrorAnalisis("La respuesta de Anthropic no contiene el informe")
 
 
-def _analizar_openai(jpeg: bytes, producto: str) -> tuple[dict, str]:
+def _analizar_openai(jpeg: bytes, tarea: Tarea) -> tuple[dict, str]:
     import openai
 
     clave = config("OPENAI_API_KEY")
@@ -285,14 +293,14 @@ def _analizar_openai(jpeg: bytes, producto: str) -> tuple[dict, str]:
         max_completion_tokens=4000,
         response_format={
             "type": "json_schema",
-            "json_schema": {"name": "informe_calidad", "strict": True, "schema": ESQUEMA},
+            "json_schema": {"name": tarea.nombre, "strict": True, "schema": tarea.esquema},
         },
         messages=[
-            {"role": "system", "content": PROMPT_SISTEMA},
+            {"role": "system", "content": tarea.sistema},
             {
                 "role": "user",
                 "content": [
-                    {"type": "text", "text": construir_prompt_usuario(producto)},
+                    {"type": "text", "text": tarea.peticion},
                     {"type": "image_url", "image_url": {"url": url, "detail": "high"}},
                 ],
             },
@@ -305,9 +313,14 @@ def _analizar_openai(jpeg: bytes, producto: str) -> tuple[dict, str]:
         raise ErrorAnalisis(f"Respuesta de OpenAI no es JSON válido: {e}") from e
 
 
-def _analizar_simulado(jpeg: bytes, producto: str) -> tuple[dict, str]:
+def _analizar_simulado(jpeg: bytes, tarea: Tarea) -> tuple[dict, str]:
     """Respuesta de ejemplo para desarrollo sin clave. No usar ante clientes."""
     time.sleep(1.5)
+    if tarea.nombre != "informe_calidad":
+        from .sanidad import simulado_sanidad
+
+        return simulado_sanidad(tarea.peticion), "simulado"
+    producto = next((k for k, v in PRODUCTOS.items() if v["nombre"] in tarea.peticion), "auto")
     nombre = PRODUCTOS.get(producto, PRODUCTOS["tomate"])["nombre"]
     if producto == "auto":
         nombre = "Tomate"
@@ -392,14 +405,20 @@ def normalizar(inf: dict) -> dict:
     return inf
 
 
-def analizar(jpeg: bytes, producto: str) -> Resultado:
+def ejecutar(jpeg: bytes, tarea: Tarea, normalizador=None) -> Resultado:
     """Llama al proveedor configurado con respaldo automático."""
+    normalizador = normalizador or (lambda x: x)
     errores = []
     for nombre in orden_proveedores():
         t0 = time.time()
         try:
-            informe, modelo = PROVEEDORES[nombre](jpeg, producto)
-            return Resultado(normalizar(informe), nombre, modelo, time.time() - t0)
+            informe, modelo = PROVEEDORES[nombre](jpeg, tarea)
+            return Resultado(normalizador(informe), nombre, modelo, time.time() - t0)
         except Exception as e:  # noqa: BLE001  se registra y se prueba el siguiente
             errores.append(f"{nombre}: {type(e).__name__}: {e}")
     raise ErrorAnalisis(" | ".join(errores))
+
+
+def analizar(jpeg: bytes, producto: str) -> Resultado:
+    """Informe de calidad comercial (Extra, I, II...)."""
+    return ejecutar(jpeg, _tarea_calidad(producto), normalizar)
