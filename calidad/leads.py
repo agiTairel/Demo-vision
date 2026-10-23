@@ -62,10 +62,19 @@ def guardar_lead(email: str, nombre: str, empresa: str, consentimiento: bool,
             )
             with urllib.request.urlopen(req, timeout=20) as r:
                 cuerpo = r.read().decode("utf-8", "replace")
+                url_final = r.geturl()
             try:
                 respuesta = json.loads(cuerpo or "{}")
             except json.JSONDecodeError:
-                respuesta = {"ok": False, "cuerpo": cuerpo[:300]}
+                # Google ha devuelto una página web: guardamos su título y dónde acabó la petición.
+                titulo = re.search(r"<title>(.*?)</title>", cuerpo, re.S | re.I)
+                error_gs = re.search(r'(?:errorMessage|Error|Excepción|Exception)[^<]{0,200}', cuerpo)
+                respuesta = {
+                    "ok": False,
+                    "url_final": url_final.split("?")[0],
+                    "titulo": titulo.group(1).strip()[:120] if titulo else "",
+                    "detalle": error_gs.group(0)[:200] if error_gs else "",
+                }
             if respuesta.get("ok"):
                 return True
             print("ERROR lead: respuesta", respuesta, flush=True)
