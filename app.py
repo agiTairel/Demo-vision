@@ -265,7 +265,7 @@ if PASO == "bienvenida":
             f"cederemos a terceros. Puedes pedir su acceso o borrado en {esc(EMAIL_CONTACTO)}.</div>",
             unsafe_allow_html=True,
         )
-        enviar = st.form_submit_button("Probar demo", type="primary", use_container_width=True)
+        enviar = st.form_submit_button("Probar demo", type="primary", width="stretch")
     if enviar:
         if not email_valido(email or ""):
             st.error("Revisa el correo electrónico, parece que no es válido.")
@@ -322,7 +322,7 @@ elif PASO == "campos":
             )
         st.caption(f"Pueblos de referencia: {COMARCAS[comarca]['pueblos']}")
 
-    if st.button("Continuar: enviar fotos de mis campos", type="primary", use_container_width=True):
+    if st.button("Continuar: enviar fotos de mis campos", type="primary", width="stretch"):
         nuevos = []
         for i in range(n):
             cult, zona = st.session_state[f"cult_{i}"], st.session_state[f"zona_{i}"]
@@ -363,8 +363,8 @@ elif PASO == "fotos":
                 cols = st.columns(2)
                 for k, (ruta, titulo) in enumerate(fotos):
                     with cols[k % 2]:
-                        st.image(str(ruta), use_container_width=True)
-                        if st.button(f"Enviar: {titulo}", key=f"foto_{i}_{k}", use_container_width=True):
+                        st.image(str(ruta), width="stretch")
+                        if st.button(f"Enviar: {titulo}", key=f"foto_{i}_{k}", width="stretch"):
                             analizar_campo(i, ruta.read_bytes())
                             st.rerun()
         with pestanas[-1]:
@@ -376,8 +376,8 @@ elif PASO == "fotos":
                 "Usar la cámara en directo", key=f"tcam_{i}") else None
             fuente = camara or archivo
             if fuente is not None:
-                st.image(fuente, use_container_width=True)
-            if st.button("Enviar foto y analizar", type="primary", use_container_width=True, disabled=fuente is None,
+                st.image(fuente, width="stretch")
+            if st.button("Enviar foto y analizar", type="primary", width="stretch", disabled=fuente is None,
                          key=f"enviar_{i}"):
                 analizar_campo(i, fuente.getvalue())
                 st.rerun()
@@ -412,7 +412,7 @@ elif PASO == "fotos":
         c1, c2 = st.columns([1, 1.3])
         with c1:
             if campo.get("foto"):
-                st.image(campo["foto"], use_container_width=True)
+                st.image(campo["foto"], width="stretch")
         with c2:
             if inf["incidencias"]:
                 items = "".join(
@@ -439,12 +439,12 @@ elif PASO == "fotos":
         )
         ultimo = i + 1 >= len(campos)
         if st.button("Ver la previsión de mi campaña →" if ultimo else f"Siguiente: campo {i + 2} →",
-                     type="primary", use_container_width=True):
+                     type="primary", width="stretch"):
             if ultimo:
                 ir("prevision")
             st.session_state["campo_actual"] = i + 1
             st.rerun()
-        if st.button("↺ Enviar otra foto de este campo", use_container_width=True):
+        if st.button("↺ Enviar otra foto de este campo", width="stretch"):
             campo["informe"], campo["foto"] = None, None
             st.rerun()
 
@@ -471,9 +471,15 @@ elif PASO == "prevision":
             unsafe_allow_html=True,
         )
     with c2:
-        if st.button("← Volver a mis campos", use_container_width=True):
+        if st.button("← Volver a mis campos", width="stretch"):
             st.session_state["campo_actual"] = 0
             ir("fotos")
+        if st.button("↺ Empezar otra demo", width="stretch"):
+            usuario = st.session_state.get("usuario")
+            for k in list(st.session_state.keys()):
+                del st.session_state[k]
+            st.session_state["usuario"] = usuario
+            ir("campos" if usuario else "bienvenida")
     filas = []
     for k, c in enumerate(campos, start=1):
         inf = c.get("informe") or {}
@@ -486,35 +492,7 @@ elif PASO == "prevision":
         )
     st.markdown('<div class="resumen-campos">' + "".join(filas) + "</div>", unsafe_allow_html=True)
 
-    components.html(html_prevision(campos), height=2600, scrolling=True)
-
-    st.markdown(
-        """
-<div class="cta">
-  <h3>¿Lo vemos con tus datos?</h3>
-  Esta demo usa datos de ejemplo. Con los tuyos, en Tairel Data construimos:
-  <ul>
-    <li>Detección de plagas y enfermedades con fotos de campo, drones o cámaras en planta.</li>
-    <li>Previsión de ventas, costes y cosecha entrenada con tu histórico y el clima de tu zona.</li>
-    <li>Alertas por comarca y conexión con tu ERP para decidir compras, turnos y stock.</li>
-  </ul>
-</div>
-""",
-        unsafe_allow_html=True,
-    )
-    b1, b2, b3 = st.columns(3)
-    with b1:
-        st.link_button("✉️ Escríbenos", f"mailto:{EMAIL_CONTACTO}?subject=Demo%20IA%20para%20el%20campo", use_container_width=True)
-    with b2:
-        st.link_button("🌐 taireldata.com", WEB_CONTACTO, use_container_width=True)
-    with b3:
-        if st.button("↺ Empezar otra demo", use_container_width=True):
-            usuario = st.session_state.get("usuario")
-            for k in list(st.session_state.keys()):
-                del st.session_state[k]
-            st.session_state["usuario"] = usuario
-            ir("campos" if usuario else "bienvenida")
-    pie()
+    components.html(html_prevision(campos, EMAIL_CONTACTO, WEB_CONTACTO), height=2600, scrolling=True)
 
 if config("MOSTRAR_DIAGNOSTICO", "0") == "1":
     with st.expander("Diagnóstico (solo equipo)"):

@@ -53,6 +53,7 @@ def campos_para_prevision(campos: list[dict]) -> list[dict]:
     return salida
 
 
-def html_prevision(campos: list[dict]) -> str:
-    datos = json.dumps({"campos": campos_para_prevision(campos)}, ensure_ascii=False).replace("</", "<\\/")
+def html_prevision(campos: list[dict], email: str = "", web: str = "") -> str:
+    datos = json.dumps({"campos": campos_para_prevision(campos), "cta": {"email": email, "web": web}},
+                       ensure_ascii=False).replace("</", "<\\/")
     return _plantilla().replace(MARCA_INYECCION, f"<script>window.DEMO_TAIREL = {datos};</script>\n" + MARCA_INYECCION, 1)

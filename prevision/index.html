@@ -340,6 +340,12 @@ button.comp:hover { background: rgba(47,125,50,.05); }
 html.embebido .barra-movil { display: none !important; }
 html.embebido #btn-reset { display: none; }
 html.embebido .app { min-height: 0; }
+.cta-tairel { background: linear-gradient(135deg, #1f2a1f 0%, #244a26 60%, #2f7d32 100%); color: #fff; border-radius: 22px; padding: 24px; margin: 28px 0 8px; }
+.cta-tairel h2 { color: #fff; margin: 0 0 8px; }
+.cta-tairel ul { margin: 10px 0 16px; padding-left: 20px; } .cta-tairel li { margin: 5px 0; } .cta-tairel li::marker { color: #e2ac24; }
+.cta-tairel .botones { display: flex; flex-wrap: wrap; gap: 10px; }
+.cta-tairel a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border-radius: 12px; font-weight: 700; text-decoration: none; background: #fff; color: #1f2a1f; }
+.cta-tairel a.sec { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.6); }
 @media (max-width: 1039px) {
   .barra-movil { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; display: flex; align-items: center; gap: 18px;
     padding: 10px max(20px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(20px, env(safe-area-inset-left, 0px));
@@ -613,6 +619,7 @@ html.embebido .app { min-height: 0; }
       </div>
     </details>
 
+    <section class="cta-tairel" id="s-cta" hidden></section>
     <p class="pie-app" id="pie"></p>
   </main>
 
@@ -1825,10 +1832,28 @@ if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => pint
 // Dentro de la app de Tairel, el marco crece con el contenido para que no haya dos barras de scroll
 if (DEMO) {
   let ultimaAltura = 0;
+  // Caja final de Tairel, siempre al final de la previsión
+  if (DEMO.cta) {
+    const cta = $('#s-cta'), e = (t) => String(t || '').replace(/[&<>"]/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
+    cta.innerHTML = '<h2>¿Lo vemos con tus datos?</h2><p>Esta demo usa datos de ejemplo. Con los tuyos, en Tairel Data construimos:</p><ul>' +
+      '<li>Detección de plagas y enfermedades con fotos de campo, drones o cámaras en planta.</li>' +
+      '<li>Previsión de ventas, costes y cosecha entrenada con tu histórico y el clima de tu zona.</li>' +
+      '<li>Alertas por comarca y conexión con tu ERP para decidir compras, turnos y stock.</li></ul><div class="botones">' +
+      (DEMO.cta.email ? '<a target="_blank" rel="noopener" href="mailto:' + e(DEMO.cta.email) + '?subject=Demo%20IA%20para%20el%20campo">✉️ Escríbenos</a>' : '') +
+      (DEMO.cta.web ? '<a class="sec" target="_blank" rel="noopener" href="' + e(DEMO.cta.web) + '">🌐 ' + e(DEMO.cta.web.replace(/^https?:\/\//, '')) + '</a>' : '') + '</div>';
+    cta.hidden = false;
+  }
   const informar = () => {
     try {
-      const h = Math.ceil(document.documentElement.scrollHeight);
-      if (window.frameElement && Math.abs(h - ultimaAltura) > 2) { ultimaAltura = h; window.frameElement.style.height = h + 'px'; }
+      const f = window.frameElement, h = Math.ceil(document.documentElement.scrollHeight);
+      if (!f || Math.abs(h - ultimaAltura) <= 2) return;
+      ultimaAltura = h; f.style.height = h + 'px'; f.setAttribute('height', h);
+      // Los contenedores de Streamlit alrededor del marco tienen alto fijo: se lo quitamos para que lo de abajo baje
+      let p = f.parentElement;
+      for (let k = 0; p && k < 6; k++, p = p.parentElement) {
+        if (/stVerticalBlock|stMain/.test(p.getAttribute('data-testid') || '')) break;
+        p.style.height = 'auto'; p.style.minHeight = h + 'px'; p.style.maxHeight = 'none';
+      }
     } catch (e) { /* marco de otro origen */ }
   };
   if ('ResizeObserver' in window) new ResizeObserver(informar).observe(document.body);
