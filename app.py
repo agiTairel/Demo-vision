@@ -11,7 +11,9 @@ Ejecutar en local:  streamlit run app.py
 
 from __future__ import annotations
 
+import base64
 import html
+import io
 import json
 import os
 import time
@@ -20,6 +22,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import streamlit as st
+from PIL import Image, ImageOps
 import streamlit.components.v1 as components
 
 from calidad.analizador import ErrorAnalisis, config, huella, orden_proveedores, preparar_imagen
@@ -149,6 +152,46 @@ def registrar_uso() -> None:
 def precalculados() -> dict:
     f = DIR_FOTOS / "resultados.json"
     return json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}
+
+
+@st.cache_data(show_spinner=False, max_entries=200)
+def miniatura(ruta: str, mtime: float, lado: int = 420) -> str:
+    """Recorte cuadrado centrado de la foto, como data URI, para que todas ocupen el mismo recuadro."""
+    img = ImageOps.exif_transpose(Image.open(ruta)).convert("RGB")
+    img = ImageOps.fit(img, (lado, lado), method=Image.LANCZOS)
+    buf = io.BytesIO()
+    img.save(buf, "JPEG", quality=82)
+    return "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
+
+
+def estilo_galeria(clave: str, fotos_css: dict[str, str]) -> str:
+    """CSS de la cuadrícula: fotos clicables del mismo tamaño y recuadro para subir foto al lado."""
+    reglas = [
+        f".st-key-{clave} [data-testid='stHorizontalBlock']{{flex-wrap:wrap !important;gap:12px !important;}}",
+        f".st-key-{clave} [data-testid='stColumn']{{flex:0 0 calc(25% - 9px) !important;min-width:calc(25% - 9px) !important;max-width:calc(25% - 9px);}}",
+        "@media (max-width:640px){"
+        f".st-key-{clave} [data-testid='stColumn']{{flex:0 0 calc(50% - 6px) !important;min-width:calc(50% - 6px) !important;max-width:calc(50% - 6px);}}}}",
+        # Recuadro de subir o hacer foto
+        f".st-key-{clave} [data-testid='stFileUploader'] section{{width:100% !important;aspect-ratio:1/1;position:relative;"
+        "display:flex !important;align-items:center;justify-content:center;padding:8px !important;border-radius:16px !important;"
+        "border:2px dashed var(--hoja) !important;background:var(--panel) !important;box-sizing:border-box;}",
+        f".st-key-{clave} [data-testid='stFileUploaderDropzoneInstructions']{{display:none;}}",
+        f".st-key-{clave} [data-testid='stFileUploader'] section::before{{content:'📷\\AHacer o subir\\Atu foto';white-space:pre;"
+        "text-align:center;font-weight:800;color:var(--hoja);font-size:1rem;line-height:1.4;}",
+        f".st-key-{clave} [data-testid='stFileUploader'] section button{{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;}}",
+        f".st-key-{clave} [data-testid='stFileUploader'] label{{display:none;}}",
+    ]
+    # Fotos: el botón es la propia imagen, recortada en cuadrado
+    for k, uri in fotos_css.items():
+        reglas.append(
+            f".st-key-{k} button{{width:100% !important;aspect-ratio:1/1;height:auto !important;min-height:0 !important;"
+            "padding:0 !important;border-radius:16px !important;border:3px solid transparent !important;"
+            f"background:url('{uri}') center/cover no-repeat !important;color:transparent !important;"
+            "box-shadow:0 2px 8px rgba(31,42,31,.12);transition:transform .12s,border-color .12s;}"
+            f".st-key-{k} button:hover,.st-key-{k} button:focus{{border-color:var(--hoja) !important;transform:scale(1.02);}}"
+            f".st-key-{k} button p,.st-key-{k} button div{{visibility:hidden;}}"
+        )
+    return "<style>" + "".join(reglas) + "</style>"
 
 
 def fotos_de(cultivo: str) -> list[tuple[Path, str]]:
@@ -362,30 +405,33 @@ elif PASO == "fotos":
     inf = campo.get("informe")
     if not inf:
         fotos = fotos_de(campo["cultivo"])
-        pestanas = st.tabs(["🖼️ Elegir una foto", "📷 Hacer o subir foto"] if fotos else ["📷 Hacer o subir foto"])
-        if fotos:
-            with pestanas[0]:
-                cols = st.columns(2)
-                for k, (ruta, titulo) in enumerate(fotos):
-                    with cols[k % 2]:
-                        st.image(str(ruta), width="stretch")
-                        if st.button(f"Enviar: {titulo}", key=f"foto_{i}_{k}", width="stretch"):
-                            analizar_campo(i, ruta.read_bytes())
-                            st.rerun()
-        with pestanas[-1]:
-            if not fotos:
-                st.caption("Haz una foto a una hoja, planta o muestra de este cultivo, o sube una que tengas.")
-            archivo = st.file_uploader("Toca para hacer una foto o elegir una imagen", type=["jpg", "jpeg", "png", "webp"],
-                                       key=f"subir_{i}")
-            camara = st.camera_input("Cámara", key=f"cam_{i}", label_visibility="collapsed") if st.toggle(
-                "Usar la cámara en directo", key=f"tcam_{i}") else None
-            fuente = camara or archivo
-            if fuente is not None:
-                st.image(fuente, width="stretch")
-            if st.button("Enviar foto y analizar", type="primary", width="stretch", disabled=fuente is None,
-                         key=f"enviar_{i}"):
-                analizar_campo(i, fuente.getvalue())
-                st.rerun()
+        st.markdown('<div class="nota" style="margin-bottom:8px">' +
+                    ("Toca una de las fotos o haz la tuya." if fotos else "Haz una foto a una hoja, planta o muestra de este cultivo, o sube una que tengas.") +
+                    "</div>", unsafe_allow_html=True)
+        clave_gal = f"galeria_{i}"
+        claves = {f"foto_{i}_{k}": miniatura(str(ruta), ruta.stat().st_mtime) for k, (ruta, _) in enumerate(fotos)}
+        st.markdown(estilo_galeria(clave_gal, claves), unsafe_allow_html=True)
+        elegida, archivo = None, None
+        with st.container(key=clave_gal):
+            casillas = fotos + [None]  # la última casilla, justo al lado de las fotos, es la de subir o hacer foto
+            cols = st.columns(len(casillas))  # una sola fila que se reparte en 4 por fila (2 en el móvil)
+            for k, item in enumerate(casillas):
+                with cols[k]:
+                    if item is None:
+                        archivo = st.file_uploader("Hacer o subir foto", type=["jpg", "jpeg", "png", "webp"],
+                                                   key=f"subir_{i}", label_visibility="collapsed")
+                    else:
+                        ruta, titulo = item
+                        if st.button(titulo, key=f"foto_{i}_{k}", width="stretch"):
+                            elegida = ruta
+        if elegida is not None:
+            analizar_campo(i, elegida.read_bytes())
+            st.rerun()
+        # Foto propia: se analiza en cuanto se elige, sin más botones
+        if archivo is not None and st.session_state.get(f"subida_{i}") != archivo.file_id:
+            st.session_state[f"subida_{i}"] = archivo.file_id
+            analizar_campo(i, archivo.getvalue())
+            st.rerun()
         if st.session_state.get("error"):
             st.markdown(f'<div class="aviso">{esc(st.session_state["error"])}</div>', unsafe_allow_html=True)
         if st.button("Saltar este campo", key=f"saltar_{i}"):
