@@ -115,6 +115,72 @@ FOTOS_CAMPO = {
              ("maiz_hongo.jpg", "Mazorca con moho")],
 }
 
+# Fotos de la carpeta de cada cultivo: ejemplos/campos/<cultivo>/*.jpg|jpeg|png|webp
+# Se muestran todas las que haya, ordenadas por nombre; el título sale del nombre del archivo.
+EXTENSIONES_FOTO = {".jpg", ".jpeg", ".png", ".webp"}
+CARPETAS_CULTIVO = {
+    "lechuga": ["lechuga", "lechugas"],
+    "canonigos": ["canonigos", "canonigo", "canónigos", "canónigo"],
+    "espinaca": ["espinaca", "espinacas"],
+    "brocoli": ["brocoli", "brócoli"],
+    "guisante": ["guisante", "guisantes"],
+    "trigo": ["trigo"],
+    "cebada": ["cebada"],
+    "maiz": ["maiz", "maíz"],
+}
+# Palabra del nombre del archivo -> lo que el agricultor diría de su foto
+TITULOS_POR_PALABRA = {
+    "sano": "Planta sana", "sana": "Planta sana", "sanos": "Planta sana", "sanas": "Planta sana", "bien": "Planta sana",
+    "malo": "Planta con síntomas", "mala": "Planta con síntomas", "mal": "Planta con síntomas", "enfermo": "Planta con síntomas",
+    "manchas": "Hojas con manchas", "mancha": "Hojas con manchas",
+    "quemada": "Bordes de hoja quemados", "quemado": "Bordes de hoja quemados", "bordes": "Bordes de hoja quemados",
+    "oidio": "Polvo blanco en las hojas", "mildiu": "Manchas amarillas en las hojas",
+    "hongo": "Con moho", "moho": "Con moho", "roya": "Pústulas en las hojas",
+    "amarillo": "Floretes amarilleando", "amarilla": "Hojas amarilleando",
+    "oruga": "Hojas mordidas", "plaga": "Hojas mordidas", "taladro": "Tallo o mazorca perforados",
+    "espiga": "Espigas blanquecinas",
+}
+
+
+def _titulo_foto(nombre_archivo: str) -> str:
+    palabras = re.split(r"[_\-\s]+", nombre_archivo.rsplit(".", 1)[0].lower())
+    for w in reversed(palabras):
+        if w in TITULOS_POR_PALABRA:
+            return TITULOS_POR_PALABRA[w]
+    resto = [w for w in palabras[1:] if w and not w.isdigit()] or palabras
+    return " ".join(resto).capitalize()
+
+
+def fotos_carpeta(dir_base, cultivo: str) -> list:
+    """Fotos de ejemplo de un cultivo: su carpeta y, por compatibilidad, los nombres antiguos sueltos."""
+    from pathlib import Path
+
+    base = Path(dir_base)
+    fotos, vistos = [], set()
+    for nombre in CARPETAS_CULTIVO.get(cultivo, [cultivo]):
+        carpeta = base / nombre
+        if carpeta.is_dir():
+            for f in sorted(carpeta.iterdir(), key=lambda x: x.name.lower()):
+                if f.is_file() and f.suffix.lower() in EXTENSIONES_FOTO and f.name.lower() not in vistos:
+                    vistos.add(f.name.lower())
+                    fotos.append((f, _titulo_foto(f.name)))
+    for archivo, titulo in FOTOS_CAMPO.get(cultivo, []):
+        f = base / archivo
+        if f.exists() and archivo.lower() not in vistos:
+            fotos.append((f, titulo))
+    # Si dos fotos acaban con el mismo título, se numeran para distinguirlas
+    cuenta = {}
+    for _, t in fotos:
+        cuenta[t] = cuenta.get(t, 0) + 1
+    vistos_t, salida = {}, []
+    for f, t in fotos:
+        if cuenta[t] > 1:
+            vistos_t[t] = vistos_t.get(t, 0) + 1
+            t = f"{t} ({vistos_t[t]})"
+        salida.append((f, t))
+    return salida
+
+
 # ---------------------------------------------------------------------------
 # Esquema y prompt
 # ---------------------------------------------------------------------------

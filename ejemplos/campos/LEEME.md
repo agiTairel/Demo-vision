@@ -1,41 +1,24 @@
-# Fotos predeterminadas de los campos
+# Fotos de ejemplo de los campos
 
-Son las fotos que el visitante puede "enviar" como agricultor. Pon aquí cada foto con el nombre exacto (JPG). Las que falten no se muestran y el visitante solo verá la opción de hacer o subir su propia foto.
+Cada cultivo tiene su carpeta. La app muestra todas las fotos que haya dentro de la carpeta del cultivo que elige el visitante (JPG, JPEG, PNG o WEBP), y siempre ofrece también hacer o subir una foto propia.
 
-Recomendación: fotos propias o de vuestros clientes, con el síntoma bien visible, buena luz y sin personas. Después ejecuta `python precalcular.py` para que los informes salgan al instante y no gasten API durante el evento.
+Carpetas: `lechuga/`, `canonigo/` (o `canonigos/`), `espinaca/`, `brocoli/`, `guisante/`, `trigo/`, `cebada/`, `maiz/`.
 
-## Lechuga
-- `lechuga_sana.jpg`: Recién cortada en campo
-- `lechuga_manchas.jpg`: Hojas con manchas amarillas
-- `lechuga_bordes.jpg`: Bordes de hoja quemados
+El texto del botón sale del nombre del archivo:
 
-## Canónigos
-- `canonigos_sanos.jpg`: Bandeja recién cosechada
-- `canonigos_manchas.jpg`: Hojas con polvo blanco o manchas
+- `..._sano` / `..._sana` → "Planta sana"
+- `..._malo` / `..._mal` → "Planta con síntomas"
+- `..._manchas` → "Hojas con manchas"
+- `..._quemada` / `..._bordes` → "Bordes de hoja quemados"
+- `..._oidio` → "Polvo blanco en las hojas"
+- `..._mildiu` → "Manchas amarillas en las hojas"
+- `..._roya` → "Pústulas en las hojas"
+- `..._hongo` / `..._moho` → "Con moho"
+- `..._amarillo` → "Floretes amarilleando"
+- `..._oruga` / `..._plaga` → "Hojas mordidas"
+- `..._taladro` → "Tallo o mazorca perforados"
+- `..._espiga` → "Espigas blanquecinas"
 
-## Espinaca
-- `espinaca_sana.jpg`: Recién cortada en campo
-- `espinaca_manchas.jpg`: Manchas amarillas en el haz
+Si la palabra no está en la lista, se usa tal cual (por ejemplo `trigo_granizo.jpg` → "Granizo").
 
-## Brócoli
-- `brocoli_sano.jpg`: Pella recién cortada
-- `brocoli_amarillo.jpg`: Floretes amarilleando
-- `brocoli_oruga.jpg`: Hojas mordidas
-
-## Guisante
-- `guisante_sano.jpg`: Vainas en planta
-- `guisante_oidio.jpg`: Planta con polvo blanco
-
-## Trigo
-- `trigo_sano.jpg`: Espigas antes de cosechar
-- `trigo_roya.jpg`: Hojas con pústulas amarillas
-- `trigo_espiga.jpg`: Espigas blanquecinas
-
-## Cebada
-- `cebada_sana.jpg`: Espigas antes de cosechar
-- `cebada_manchas.jpg`: Hojas con manchas pardas
-
-## Maíz
-- `maiz_sano.jpg`: Mazorca recién abierta
-- `maiz_taladro.jpg`: Tallo o mazorca perforados
-- `maiz_hongo.jpg`: Mazorca con moho
+Después de añadir o cambiar fotos, ejecuta `python precalcular.py`: deja los informes calculados en `resultados.json` para que salgan al instante y no gasten API en el evento.

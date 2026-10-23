@@ -30,8 +30,8 @@ from calidad.prevision import html_prevision
 from calidad.sanidad import (
     COMARCAS,
     CULTIVOS,
-    FOTOS_CAMPO,
     analizar_sanidad,
+    fotos_carpeta,
     comarca_tipica,
     peso_cultivo,
 )
@@ -152,7 +152,8 @@ def precalculados() -> dict:
 
 
 def fotos_de(cultivo: str) -> list[tuple[Path, str]]:
-    return [(DIR_FOTOS / a, t) for a, t in FOTOS_CAMPO.get(cultivo, []) if (DIR_FOTOS / a).exists()]
+    """Todas las fotos de la carpeta del cultivo (ejemplos/campos/<cultivo>/)."""
+    return fotos_carpeta(DIR_FOTOS, cultivo)
 
 
 @st.cache_data(show_spinner=False, max_entries=1000)

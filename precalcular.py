@@ -23,7 +23,7 @@ if secretos.exists():
         os.environ.setdefault(k, str(v))
 
 from calidad.analizador import analizar, huella, preparar_imagen  # noqa: E402
-from calidad.sanidad import FOTOS_CAMPO, analizar_sanidad, comarca_tipica  # noqa: E402
+from calidad.sanidad import CULTIVOS, analizar_sanidad, comarca_tipica, fotos_carpeta  # noqa: E402
 
 DIR = RAIZ / "ejemplos"
 SALIDA = DIR / "resultados.json"
@@ -62,12 +62,12 @@ def campos() -> None:
     todas = "--todas" in sys.argv
     resultados = {} if todas or not salida.exists() else json.loads(salida.read_text(encoding="utf-8"))
     validas = set()
-    for cultivo, fotos in FOTOS_CAMPO.items():
-        for archivo, titulo in fotos:
-            ruta = d / archivo
-            if not ruta.exists():
-                print(f"  · falta campos/{archivo} ({titulo})")
-                continue
+    for cultivo in CULTIVOS:
+        fotos = fotos_carpeta(d, cultivo)
+        if not fotos:
+            print(f"  · {cultivo}: sin fotos de ejemplo")
+        for ruta, titulo in fotos:
+            archivo = ruta.relative_to(d).as_posix()
             jpeg, _ = preparar_imagen(ruta.read_bytes())
             h = huella(jpeg, "sanidad:" + cultivo)
             validas.add(h)
